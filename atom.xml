@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>XuJ</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://xujing15.github.io/"/>
+  <updated>2018-06-17T01:43:06.296Z</updated>
+  <id>http://xujing15.github.io/</id>
+  
+  <author>
+    <name>xujing</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一曝十寒之第九寒(1)</title>
+    <link href="http://xujing15.github.io/2018/06/15/20180615_1/"/>
+    <id>http://xujing15.github.io/2018/06/15/20180615_1/</id>
+    <published>2018-06-15T15:59:58.000Z</published>
+    <updated>2018-06-17T01:43:06.296Z</updated>
+    
+    <content type="html"><![CDATA[<p>2018年6月15日 周五 晴<br><a id="more"></a></p><p><a href="https://xujing15.github.io/2018/06/15/0034/">https://xujing15.github.io/2018/06/15/0034/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2018年6月15日 周五 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="javasript" scheme="http://xujing15.github.io/tags/javasript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第七寒(1)</title>
+    <link href="http://xujing15.github.io/2017/09/28/20170928_1/"/>
+    <id>http://xujing15.github.io/2017/09/28/20170928_1/</id>
+    <published>2017-09-28T15:59:58.000Z</published>
+    <updated>2017-09-29T07:34:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+cahETz+7IJrcoFiSF4ywHibswgoRMMSqXJtaGprsDNv74D32T0iUsrEvvmj68RHGAaorxqOE3dfLYo8soL2jVD08Ts3EqH5JdBBOJl5HVwPkXjX4rOkUQI5Xw9Gtp908AYrQj8PIFCCWOvj1HzyXPVdEI6FDeZUJXw2n60M4F3IWt8VOJuJo6kVYl1CZnMfKGYrLX3fe1Il97UuwbCZzfS4gCk5tWnCiP9X+4nu8ODMwna8WE0/xpn0WzHr5lik1mlFeJg3Or33llQz3KnRHn03lVAhftSf7wc4/U7Q2i9Ehkn1lDJiftnBCkVftcPB7rGk8FfWLYg8Nmid71OzHxLMoDphYMvxhXwfE7Vd7bHXTj3PIr6/pVeuCCc1LT94rwTI7N2NjJUQ==</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月28日 周四 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第八寒(1)</title>
+    <link href="http://xujing15.github.io/2017/09/28/20170929_1/"/>
+    <id>http://xujing15.github.io/2017/09/28/20170929_1/</id>
+    <published>2017-09-28T15:59:58.000Z</published>
+    <updated>2017-09-29T07:39:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX19mIhLcYg5iJQYK0jVHrfzdT+Y+2ec1k7zCRAliG4X3HHEDgRbx2gzP/0S2IcRCH3ApkyNbotifOUiYGxxPfuuFBxiAICcB6Kowuas1FuMtSPIy3rjCXNS53oeCzFy9w+5ajNQb2RVO0GXsC7idE9OgLqOx+AhJ+7KP0fzCaYgn6OZ9hwl6YzsR45Hw9vJaRpKdJG1G980kjKzriexpV0UlSlOnkv8qomUZ2WkG9cGDNQDsiZu+brgHKmjWhB21y9BSU5V6lB8/F4MPr/eyEEJshMB8dJBzs392kqlbojz6cQKyHSLfTj0voO7szAEUkOkn0bFg0zLsWheRTQbqWduhr102NJKkOk721QX4bcfecm7S4dm7cP8zNG0Qh/wJdN4zsi/nk0ROB8wl2BXp0dUpkB8dVRMbhlvM4u9D9y0U9vlSwJwSzHa7tvp525ZzXel3u3olkJ4FXEw3relvFUgbgwiaqm9z2QOUP3KSwMO6nGgVCWbTC5DflAQlGs1w7IfnhfOts0IjDW88cBa5cq6/Q7scT0tVTY30ONpx7pC99VRAgsUM2EuD2IWFM4bBmEvVLdeUCrbxukJzNKu/VGiaJX+ktff4drNhQs1BPBeVG6kmDSEnD9KdxVf3mKH923FWiznNisNSwdiY+021CBBpqnVcJOUpbi4S06kl3YpjMReG4gj96LaJ/WVX5YWCcLQarmvu3fiECwFEWMeu/HjjdmhdfHhiptCpBwnxgTmaA0TvpxC0hl8u6YV09EqzFCxYvZwdNxDyHzTBJ1LxlurzAv8xOjtfPveDafIGLE0hh8dqkZSdvOdkCNwjcTB/VhjwbDnx2aGQxcmOLFXj5q+hSS2ySqDoId5M/bHgGTx09RI1qVdmr5lmq/UjoWM1R10LrYQI/ycYyPeWVZyOkqNeYt1zXWE6/dX6zguxUbgHEgnqAGeKnjqMk24IhfcudEXEFLzkYbJFey/20cXdG9fLHCOoZmXSFJCprTOV0fujHnXLH9ONhzXKpWR22CTvazRyOpz34erbqv68qyny9yDMcCxbL9jhueKt/p855W7cIcv/VIGz10z+SoEHJwpk8TqVGM3vHH11NOtDn1bRYg1sYFaxli/UFVu61FmKAhztCur1vQuq45fSw6MNhHNwgDmJ3PbxutxjcKP5drfebpVTjMDK8Pa+6FrN30omJMQx2BdtMc+xP36YQFRxDHAT/LVYL5QsS1xYrMOKc882aLJiP3ugBeD8y6ZTGhKPoweEGFjOvjglJmJKC78asDSehVCgn9GaVDrhFMQFrUOFgYcC4gCWmUcf0SaRnxgVTzPQwIuVVusidm6yed/Yko4D8xx0OafDkWtBGNKugBgVlQTjrQR/QGw4wiIO1Ak5Zr6ExWq1VdFTYJzNBn4dRzIOCh2ZNOmRp1BRJksNOz0nFuDwX6+huwTZWUtqgbPjwIamQZGGQXNDcuCmzcVPJbFF0uTknCMENDHjsu2fixELPcC0fBGjcm0qVWRV0295UWBeLYvONtlnb+v73Cu93oK6jnq3OW+K8lB7zhKFV0/YtntBmjNpVUKUSLCcouX1ZqQ77vfhuBNjJg1/l8h2F1BdgRI6KvbRAcexKaOYDGZbZWJ+gZgsaDFmY8LhSvGG1i6urWpEcvkYZXbXWfKdiigUEhUUzmHc+oppFnyUU3WUaJGRmULeXkLf+Hz5GwGGKG/cxyCXRHXbDNQhY0zePPu/32x7ndcMSw3mgFS8bmV+HMNCWu8q83XhmrJroC23DIT+j63ItawXhVTC0AuAuABwObibbY1MimM3Z8J5QgFqxFkdKNrGbfTkXW1WBiUPX3hB4eLP9Fbil+fytoNvJStcYDCm9c4KZhJQD4UBadExtT5Y6Q9FAie5396sflW5tNCIDX71clfSfnESiYFGkstSiz3GJ71vYkYf5uUl+i49vHK5vc5t5AL9HM7nNJ7zhaHO0EnKWk/SwRZHE68/S7L4C1DtzX6KzvP6wgZqdz7B3UIOUcGc846IMFxt/4jRdqhbUuU57N8mrG11X0iZQMWh/L6aWQ69hsJBMFRgb1pKmawe2I4Pe8eWcdduSs08l7W9jraeKUUnTQLccb0Hfl3oPE5fAfkDHsZLujzP4wCS80r7vwQW3xXD2lUGJaaI+CaFdTayzVlNZjUoTSqhM3uwbAmz0+0wdbJPB36zKW/03lemLhpG8z/CFiG5Sz4lytisMVDDt50KbKoH9qP5bek9/V1Bwzy4qf9rw/MJLfU/sHlp9uFArM8dc4iq5B0C4VsEWwKT/uyDkI8HqrhDqZGMOu0/AkyAstEaaei65pPJJwcbHEPRR1n1f9DWMHnSAauBwYqDO51TVFCuf14KeSmQiOS3Ndtm3sR/hp7czKu01sCcwdWylE+WaX/5/ZqYOFvEirNfRGxpk9BId0+tcbI8wKtJ0MSN9crY/ERRAxG5jCnnf7C2tOCR2f0r7qgEBvnEPoF9N1ZQflIzi5DgaR2QmhK/BrScsSK+PXGrm7MldE5UhF7k0JJ5+RFcjcnEHxGl9Dpn1m96Cs3utw36wxyVASdHdO8xE7bIfrmiDlt1Eh/jxl90Lmpf/lEO1VAbIPRoTD/ipkL/uy4F0s2iotN0DoFzsimJHJM/bGOIXq9uf4i5UNwjKRPlgpx8II8ZhZfqjUzSgbDQo59mcns9D5dSW4qA3hMCdjZkvi8qtcNl2l1u01LcZnmZGd5F2x8Vvl/Tk0o4PfFi5B8dI5rnt5VyFabBvWS988djyN+KkQar00l9M7XqpVf88j85eieR+rj5NSMd0s9mXsxwIGX1XhnlNrehotla9pUNmlh4LKGLDaAou4twS+Mbu9NR/0+eAcd8RJgexD4od4AdKYNh1OrePrB2RTwCraY8vEUHMrShGZeruhEvdaK9uUsZ0cjy7LZxDtyBTpnq68u5y04hPtF8a2pIu1SOoItJYg==</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月29日 周五 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第六寒(1)</title>
+    <link href="http://xujing15.github.io/2017/09/27/20170927_1/"/>
+    <id>http://xujing15.github.io/2017/09/27/20170927_1/</id>
+    <published>2017-09-27T15:59:58.000Z</published>
+    <updated>2017-09-29T07:36:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+XMCgIOiOYN818A2sU68WP0hCqQYol2Yl+d+PFFh/Mp6wwY02LelrC4J7sSEObZVUHpimXsY8FZo/JfMO3KzsuUP9IfsUZnmMDnNJfrLB5tx5IZLXwap49sKhGTKjzTYG0oFv5FCsZm6k5GsdAcFZis4dMqNIBcGSJ481KrUxtF8PeU8DNZVshiHSpBUoOCbEzyHynGSIGs2Vs/a7DQNegrP3zz1uzTgXm8X3oXxBKPG2NKs+RDdR865KO87MUK2zIvLCV7F/8FnMa5civDZ1oVfqeEJf5cGKFmCcQYrFjXtP6CWti6y0LoJFBinkhlQ0TqJXzLiB372PnsRwveuH60K3bihqPfYsSoPLOmFdulRkW/TcC2JLQ5s70G/ZB0VM24tzHLWx5aLByyb6wc+g6e4rS2yRQ5YIGjl1oAaDRuRNqaPZuZZGjp1hVie/2ZxBx1zmu1CpjRjqMgOjKyrktSuRRXkFTUgD/m0QOGzWjKFiorNzmx3x0GiCSpCiFMeMSCJGJro2POaI/nNPf0dgUTes/3DlUMV4=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月27日 周三 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第五寒(1)</title>
+    <link href="http://xujing15.github.io/2017/09/26/20170926_2/"/>
+    <id>http://xujing15.github.io/2017/09/26/20170926_2/</id>
+    <published>2017-09-26T15:59:58.000Z</published>
+    <updated>2017-09-27T01:25:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>github入门与实践<br>作者：大塚弘记<br><a id="more"></a><br>&emsp;今天不想写日记了，不写了，看会书，换了本书看，享受快速阅读的快乐。<br>&emsp;本书从Git的基本知识和操作方法入手，详细介绍了GitHub的各种功能，GitHub与其他工具或服务的集成，使用GitHub的开发流程以及如何将GitHub引入到企业中。在讲解GitHub的代表功能Pull Request时，本书专门搭建了供各位读者实践的仓库，邀请各位读者进行Pull Request并共同维护。<br>&emsp;本书旨在指导各位读者如何在开发现场使用GitHub进行高效开发，适合所有想要使用GitHub进行开发的程序员或团队阅读。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;github入门与实践&lt;br&gt;作者：大塚弘记&lt;br&gt;
+    
+    </summary>
+    
+      <category term="github" scheme="http://xujing15.github.io/categories/github/"/>
+    
+    
+      <category term="github" scheme="http://xujing15.github.io/tags/github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第四寒(2)</title>
+    <link href="http://xujing15.github.io/2017/09/25/20170925_3/"/>
+    <id>http://xujing15.github.io/2017/09/25/20170925_3/</id>
+    <published>2017-09-25T15:59:59.000Z</published>
+    <updated>2017-09-26T11:08:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo+github搭建博客第四篇<br><a id="more"></a><br>&emsp;晚上搞到很晚，心里应该是憋着一口气，硬是要弄好。中英文符号真的要注意，就是因为错打了符号，一支不对，也是有提示的不过。<br><strong>主页右下角添加个人知乎主页</strong><br>都是在主题文件夹中操作，我的是concise<br>_config.yml加上：<code>zhihu: xu-jing-77-59-54</code><br>footer.ejs加上：<br><code>&lt;% if(theme.author.zhihu){ %&gt;</code><br><code>&lt;a href=&quot;https://zhihu.com/people/&lt;%=theme.author.zhihu %&gt;&quot; target=&quot;_blank&quot; title=&quot;zhihu&quot;&gt;&lt;/a&gt;</code><br>这个主题是从别人的github下载的，他又是综合了其他主题改的，负责页面哪一块就参考上下文改一下，不同主题文件名可能不一样，意思都是一样的。<br>footer.styl加上：<br><code>&amp;[title=&quot;zhihu&quot;]::before</code><br>   <code>ontent &quot;\f0eb&quot;</code><br>sidebar.styl加上：<br><code>&amp;[title=&quot;zhihu&quot;]::before</code><br>   <code>content: &quot;\f0eb&quot;;</code><br>这两个应该要统一的，content后面是什么自己决定，有一个库，我猜测自己安装或制作会有知乎的知字，懒得麻烦了，这也是一个大课题，灯泡的符号也算合适吧，附符号对照表<a href="http://www.bootcss.com/p/font-awesome/design.html" target="_blank" rel="external">http://www.bootcss.com/p/font-awesome/design.html</a><br>网上没有详细的教程，算是自己摸索的，记一下，昨晚真的魔怔了。。还有就是发现hexo s真的很好用，大家说得对，hexo d有时候需要等一下，还有就是太多的提交次数显得好不专业。。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo+github搭建博客第四篇&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://xujing15.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://xujing15.github.io/tags/hexo/"/>
+    
+      <category term="github" scheme="http://xujing15.github.io/tags/github/"/>
+    
+      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第四寒(1)</title>
+    <link href="http://xujing15.github.io/2017/09/25/20170925_2/"/>
+    <id>http://xujing15.github.io/2017/09/25/20170925_2/</id>
+    <published>2017-09-25T15:59:58.000Z</published>
+    <updated>2018-06-15T08:44:44.479Z</updated>
+    
+    <content type="html"><![CDATA[<p>为什么是python？<br>作者：Eric Raymond<br><a id="more"></a><br>&emsp;今天不想写日记了，不写了，看会书。<br>&emsp;作者通过做一个项目的经历说明了，python为什么比perl好，超过100行可能不适合使用perl了。附链接：<a href="http://www.linuxjournal.com/article/3882?page=0,0" target="_blank" rel="external">http://www.linuxjournal.com/article/3882?page=0,0</a></p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=29771089&auto=1&height=66"></iframe>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为什么是python？&lt;br&gt;作者：Eric Raymond&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://xujing15.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://xujing15.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第三寒(2)</title>
+    <link href="http://xujing15.github.io/2017/09/24/20170924_2/"/>
+    <id>http://xujing15.github.io/2017/09/24/20170924_2/</id>
+    <published>2017-09-24T15:59:59.000Z</published>
+    <updated>2018-06-15T08:42:16.086Z</updated>
+    
+    <content type="html"><![CDATA[<p>给博客中加入音乐<br><a id="more"></a></p><p><div style="position:absolute; bottom:120px; left:36px; width:76%;"></div></p><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=31445151&auto=1&height=66"></iframe><br><br><strong>安装aplayer，dplayer</strong>：<br><code>npm install dplayer --save</code><br><code>npm install aplayer --save</code><br><code>npm install hexo-tag-dplayer</code><br><code>npm install hexo-tag-aplayer</code><br><strong>点击生成外链播放器，选择iframe插件，复制代码，（想放在哪个区域，就把代码复制到实现那块区域的模板文件里）</strong><br><strong>修改样式</strong>：<br><code>&lt;div style=&quot;position:absolute; bottom:120px; left:36px; width:76%;&quot;&gt;</code><br><code>&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=31445151&amp;auto=1&amp;height=66&quot;&gt;&lt;/iframe&gt;</code><br><code>&lt;/div&gt;</code></p><p>附concise的_config_theme.yml文件</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给博客中加入音乐&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://xujing15.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://xujing15.github.io/tags/hexo/"/>
+    
+      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第三寒(1)</title>
+    <link href="http://xujing15.github.io/2017/09/24/20170924_1/"/>
+    <id>http://xujing15.github.io/2017/09/24/20170924_1/</id>
+    <published>2017-09-24T15:59:58.000Z</published>
+    <updated>2017-09-25T07:09:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX185xlQPTLpbPTn0GnBB7yNUFCl/g9UMIn9xZIFdsJkf48sJahk6gGLwbvKMJsjZNBD1Fs5AoNBXoxiK/X4bDzqfXolaQa7ngTesgF4HlSvXC/ZCrTc9mFoqHaNXYdq0C6nkrCBbSPoSD1PI3qMKYRou8ZRYI59gvatC78zbhqW9vUgljSB8hFDqQchwPUtBS36AqnkQ4hsf1UfTiigPHquOmJse8AzorAMSfbr8M8zZmrnz8FJmq6ZZWKUJ8ZzmKxyHavOIVXFjGZLUZYNBt18D4v/GkCwOlq5qFWBhl8zBvOza29OrEAz4rtS5s2vXTpL+EDpFVSVmXxSrTMtD6XqvQyA2AA2FJSaFroppxCErQbT8z5pSlHFlQhace7/dX7HjDByUtt3Q/0nVJWfkTkCwPoL6T+H080P7sW090VDakR8C2b2O9sYDt8LMP8u7h97bvj2NLC21OOhpSYotG+WLAIl4Gah/LhmrUjRc1rdxnJF4qo2CKwZsw0BZVVj2CwUnuU4+pUJqqHGuAh0TZp1+9Yiokf5e5ZOBaqsrhqujv8OKMgd/pZCHU67lFp9Zu6JU6p+KFSSD4jLzYrctipeChEEwm0JHBAkZHRlBTmuEa3GXR5Q4qC76WN99I8VSx5H1SULBQoBDmCzfnwwxeeYnDwilpXfKMLDVQ+vK664n0YmIRZzXOkThhR+IgmrHPqLuuzOgJBG0h3nMdQjU51zelDuMVxZ21+pXUkEsKWtPykrHnzy/i3FsxG8fStPYu9XQGis7FxzIo6HLpbXdLMmeFNniP8erdphAhcYmSqllAUoBCbvVMAHx2kEh7VkJIo3ZZi+1iBQjfYF+ox4/0sKCm9jloDFwavBnPJxCMkA5bdpkAYl2+JT3Rx6Hc4qTxM8jbbWy8OErqyEFphRT8otSchBS9TSK5Xg=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月24日 周日 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第二寒(1)</title>
+    <link href="http://xujing15.github.io/2017/09/23/20170923_1/"/>
+    <id>http://xujing15.github.io/2017/09/23/20170923_1/</id>
+    <published>2017-09-23T15:59:58.000Z</published>
+    <updated>2017-09-25T07:08:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+brQ78oCYOTXdC6cY3509eh1MNLZYWRx6njJNRppX3KH9avABq+jQXPeHd9lL6bLl6sw+7xVMtmGT6A8nd+WZPBDUYrFWcHAoPlJ7jAt4MLuQkzHFonL75GzhT5PtMRXvNgRCoKBmkLMijzJc1T9QpcMUnYZUHg13YCMs4h1pPqILKXoankfKpUuNC2Mv9BXYZp7zIC/alx+j/q+j5u7RtqUztVDRWwOD/Qrrq1YU+cZ708A7hqUIZn1OxILct/FHpRCuvm8QZRIUyltne5ACLZ95CPNZdOssTCE/vFeaSB92MxoU649Api0fObpJr5lHw9japRer1JEI3esdDKxFrEedTmRKsTAFSWz4i+FRZNcZhIcKc1M9avS6vdxQxSVFW0szXGTzhG3AyTzkfnowum+vejoZgQK+0tle6ZL6FBQB2EXXKKIA3Y753wsC4LyMsfdU1ZQ7PC8dNNGYx5On0od3ixWGdbf0=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月23日 周六 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第一寒(1)</title>
+    <link href="http://xujing15.github.io/2017/09/22/20170922_1/"/>
+    <id>http://xujing15.github.io/2017/09/22/20170922_1/</id>
+    <published>2017-09-22T15:59:58.000Z</published>
+    <updated>2017-09-25T07:08:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX19CIpRsSvmgaEtUfz6qbtC1o34SmDCuQIXGvdLKklS9OHHvFJkffaXJkYrlOIuxyxdCBo/meNLJ3HAvpVZdnOtK0z+kN5fElxJSdFP79NTxNdG/2nzHGhIlj/JRy8ONrhOxkdqPrjf73r4irGbQwy6HxfTEViiRPHkprwp9KewfB+npo7stfbP6QhY8msR0e/K6Q2KAsYljNlMr7R3CDXhb8ayFgahg0pg18bn9f63Y4Ov3EgZN36Um2NZzEXKZiWv0nWZISkLYatDtbvbLZb6pPuIS2kkcw/8VBhY9E/swzl9+5OXsxNg7mBhbLjgW3uHv/8HZtwqtmfvWcqfRu68symACzp5KaKo2Pj/lU/uiGVCKPqTQAZDrDWXU7f/d9Etzu3cxcvdAha9P2Px7KUqjObl/oyRqwmlJx3vuJW5feD6PWnuVHKBMctcuzZG5Fy/+Byw2ljBPUH5zEx+Y/0gmXL8dXL/4dawM8RtyYTfig8HNdrAF2HRDeVzaFAwrs5LVOmbfW3KECtMWXETVhWvbKNHaQrJQuLHM1XchFfWmLPW8vR9q+wapU88TtTKEDkNs3bly0nww/3F8z1lMmEDEWWiJZbiZXOxLeqmrRQ/jI4xNux/aldJLxyvJMwzqu7FlBRlzm3EH5pHM1dO06wplkfSK3hLAzI2kM5489rXIBz4t8bBIGTTUo9i4QhzHNs6MK7V+KSngeG7CK3ypVgZOej6dizbI5c/ZspRC2xNwKvtPZJGBI961haY51FUSyQdFifouDlq/kl8HOcNupxmhzZ+bWFt+kCFmKXsq4hqeua27UbQJfo3EdGsNxVVqjZuilNeAqgfIGrlD/reL6UGHN9u8qrEMY1kWinEHWAs1VgtPfbEW7vakSDDZx6PtLZ6nLIvCxyOEigRVco6AoEcy6dntew63fGjyC0xBdf7sV4+1mD/Q3uah59DCqzXsvye5CiD2PQgyQot49/v+vPTqpEEPkjjLmI671t0Yfo6qu1KN3OORWLxhvkHMcnjRrAdpGt7EKskiqmbqtKuFiXgYu87XyOViSmcPUGIFAj7VPyaXvtmM8YoWPT2WKGctmYbIn3yTrRVlwI4VLmfchoomVFyEwYIxFBx5t000U69rh6ip82eAeA4Z</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月22日 周五 雨&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之一曝(3)</title>
+    <link href="http://xujing15.github.io/2017/09/21/20170921_3/"/>
+    <id>http://xujing15.github.io/2017/09/21/20170921_3/</id>
+    <published>2017-09-21T15:59:59.000Z</published>
+    <updated>2017-09-22T10:55:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>markdown搭建博客第一篇<br><a id="more"></a><br>参考：<a href="http://wowubuntu.com/markdown/#p" target="_blank" rel="external">https://crackcer.com/hexo-aes-password.html</a>；小甲鱼关于markdown的七篇文章</p><p>虽然说是markdown，用的是sublime test2，有时候会说试用到期比较烦。这样就不会自动加\，造成一些麻烦了。和html代码混用，博客网页会更有意思。</p><h4 id="首行缩进字符"><a href="#首行缩进字符" class="headerlink" title="首行缩进字符"></a>首行缩进字符</h4><p><code>&amp;ensp;</code> 半角的空格<br><code>&amp;emsp;</code>全角的空格</p><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>文字前加#</p><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p><strong>无序列表</strong>：文字前加-或*，空一格<br><strong>有序列表</strong>：文字前加1.2.3.（数字.），空一格</p><h4 id="字体，字号与颜色"><a href="#字体，字号与颜色" class="headerlink" title="字体，字号与颜色"></a>字体，字号与颜色</h4><p><code>&lt;font color=gray&gt;color=gray&lt;/font&gt;</code></p><p><font color="gray">color=gray</font><br><code>&lt;font color=#00ffff&gt;color=#00ffff&lt;/font&gt;</code></p><p><font color="#00ffff">color=#00ffff</font><br><code>&lt;font size=7&gt;size=7&lt;/font&gt;</code></p><p><font size="7">size=7</font></p><p><font face="黑体">我是黑体字</font><br><code>&lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;</code></p><h4 id="背景色"><a href="#背景色" class="headerlink" title="背景色"></a>背景色</h4><p><code>&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=orange&gt;背景色是：orange&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></p><p><table><tr><td bgcolor="orange">背景色是：orange</td></tr></table></p><h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><p>文字前加></p><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p><code>[www.baidu.com](www.baidu.com)</code><br><a href="www.baidu.com">www.baidu.com</a><br><code>[百度](www.baidu.com)</code><br><a href="www.baidu.com">百度</a></p><h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p><code>![熊本熊](https://github.com/xujing15/xujing15.github.io/blob/master/about/hahaha.jpeg?raw=true)</code><br><img src="https://github.com/xujing15/xujing15.github.io/blob/master/about/hahaha.jpeg?raw=true" alt="熊本熊"></p><h4 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h4><p><code>*粗体*</code><br><em>粗体</em><br><code>*斜体*</code><br><em>斜体</em></p><h4 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h4><p>三个*</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;markdown搭建博客第一篇&lt;br&gt;
+    
+    </summary>
+    
+      <category term="markdown" scheme="http://xujing15.github.io/categories/markdown/"/>
+    
+    
+      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="markdown" scheme="http://xujing15.github.io/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之一曝(2)</title>
+    <link href="http://xujing15.github.io/2017/09/21/20170921_2/"/>
+    <id>http://xujing15.github.io/2017/09/21/20170921_2/</id>
+    <published>2017-09-21T15:59:58.000Z</published>
+    <updated>2018-06-15T08:24:29.698Z</updated>
+    
+    <content type="html"><![CDATA[<p>整理grafting through工作<br><a id="more"></a><br>看过的文献：</p><ul><li>“Grafting Through”: Mechanistic Aspects of Radical Polymerization Reactions with Surface-Attached Monomers（si）</li><li>Synthesis of a Linear Polyethylene Macromonomer and Preparation of Polystyrene-graft-Polyethylene Copolymers via Grafting-Through Atom Transfer Radical Polymerization </li><li>Polymer Brushes for Membrane Separations: A Review </li><li>Polymers at Interfaces: Using Atom Transfer Radical Polymerization in the Controlled Growth of Homopolymers and Block Copolymers from Silicon Surfaces in the Absence of Untethered Sacrificial Initiator </li><li>Surface Interaction Forces of Well-Defined, High-Density Polymer Brushes Studied by Atomic Force Microscopy. 1. Effect of Chain Length </li><li>“Grafting-Through”: Growing Polymer Brushes by Supplying Monomers through the Surface<br>和老师讨论过文献，说的不清楚，现在的打算是接着看看文献，好好整理，整理出一条脉络。朱师兄的部分代码，老师的部分想法也要整理一下，可以跑一些作业。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整理grafting through工作&lt;br&gt;
+    
+    </summary>
+    
+      <category term="grafting through" scheme="http://xujing15.github.io/categories/grafting-through/"/>
+    
+    
+      <category term="grafting through" scheme="http://xujing15.github.io/tags/grafting-through/"/>
+    
+      <category term="工作" scheme="http://xujing15.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之一曝(1)</title>
+    <link href="http://xujing15.github.io/2017/09/21/20170921_1/"/>
+    <id>http://xujing15.github.io/2017/09/21/20170921_1/</id>
+    <published>2017-09-21T15:59:57.000Z</published>
+    <updated>2017-09-22T07:08:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+wzMYpqVUhk9Dt4gszcqXMo2aXVlyNcP7FCRZclbnKI36Z74/p7+EXF1sMTWqy2Bqj4fGFqnY8T4yDYzTfIqv6EzpZ0KKVITQpBv+zDKO/mPlZsFZO7UGhwy2wyovjn+nWXT84uy5yBKUHvSSl2IZ6B9OII6LFpOL4NiA4JDR48p/H+1E8RrVHM8zNJrk1CirNlHGqHgNYTtDwbEGURQU1SborkMhMo4iArdlR3X5irP+6vkhc7uf3l5TLw4oj9IXnfMSrLxLvvpXtxEFDkiHVWEmvJf6wSCvWH68dZS3IGYgU40wR8xi/PI/XaeQFqGMK8stQfpMhcoW64MitDwEElIr8n2wAArlB9c7WxS6Gj414XF77L2mU+QURtyilAZ8PWR3lWSfN93p2JyVEWxkuN37BviFKKhfmN63Ay0u/2KlXqPWPOIUYvSQA6zPt58qMdeod9B+KYgCLw9x/cWszRE5UyFeMYK4S6WWIXleXi+ZkXvxak/nAUN3N3pKSE3hSJsS0t1v6KjcVfomj8oom/sgGKY7VGaB1HwnMOrSxDAZGVmlX4uzrAdD7uw5nvbFs1gUFsDZpAttlIggrpc+FuYWneSHTW2FvNofS9hszPQXrB7osLTptQmLOFqGQTI5dAXjottCNPi36SY+1wPTIzrQdN5w9+X3QRFI0GEbzxJMxLRQu2+08nM0Es2+Wt5uXWwnhMZbT4HeMkpikeYIr0xxrTn6XHbi6XsT/hl6AvMjC756NkPO/wASYrPyhcsSzij/g136BrPIMy9ogKNoWEuZhDNaOdg8qtgJxTf1uoFdKY2cQokpHJhv+zJ3be8QWxDpZpdacsLAdfJ+pcrxsnbm41jeemZooaTVxf6bAyXYEYYcNIKLgrGNIWrtmlGEQ6BCfS4pTfxEc+jIfIaFoA7TJh7+917CNjwfcGIJXdGxn5+diEYAHls7fjhrE5IzSbxZfWGkRKCQiv8uci+Uo29RQdnXFI6vR/zCTJ7nj6UL/sC6ddJNnrTFFCpoGSS5eqxfhaveIsQl1rh46zBB1gqXaVsKXL9H2I4USNUIFNaTaJVg5RVwHuVJs1vGiEDKMFNEdRybn5MqFTF+Y6hlSl3XWd60fB+U=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月21日 周四 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两天晒网之第二天(2)</title>
+    <link href="http://xujing15.github.io/2017/09/20/20170920_2/"/>
+    <id>http://xujing15.github.io/2017/09/20/20170920_2/</id>
+    <published>2017-09-20T15:59:59.000Z</published>
+    <updated>2018-06-15T08:23:33.948Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo+github搭建博客第三篇<br><a id="more"></a></p><h4 id="使用AES算法加密hexo文章"><a href="#使用AES算法加密hexo文章" class="headerlink" title="使用AES算法加密hexo文章"></a>使用AES算法加密hexo文章</h4><p>安装hexo-encrypt插件：<code>npm install hexo-encrypt</code><br>在/hexo/package.json中加入：<code>”hexo-encrypt&quot;: &quot;^0.2.0&quot;,</code>，加在倒数第一行前<br>在/hexo/ _config.yml中加入：<br><code>\#encrypt</code><br><code>encrypt:</code><br>  <code>password: 123456</code><br>在想要加密的文件头部加入：<br><code>encrypt: true</code><br><code>enc_pwd: 123456</code></p><h4 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h4><p>新建一个页面，命名为categories：<code>hexo new page categories</code><br>在hexo/source/categories目录的index.md中修改:<br><code>---</code><br><code>title: categories</code><br><code>date:</code><br><code>type: &quot;categories&quot;</code><br><code>---</code><br>在hexo/themes/concise/_config.yml menu添加:<code>categories: /categories</code>（不添加就不会出现在菜单栏）<br>在想要分类的文章中添加:<code>category: &quot;hexo&quot;</code>  # 分类为hexo</p><h4 id="菜单栏about页面"><a href="#菜单栏about页面" class="headerlink" title="菜单栏about页面"></a>菜单栏about页面</h4><p>新建一个页面，命名为about：<code>hexo new page about</code><br>在hexo/source/about/index.md中添加内容<br>在hexo/_config.yml mean下添加：<code>About: /about</code></p><h4 id="为Hexo添加百度搜索"><a href="#为Hexo添加百度搜索" class="headerlink" title="为Hexo添加百度搜索"></a>为Hexo添加百度搜索</h4><p>打开themes/concise/layout/_widget/search.ejs文件，将里面内容替换</p><h4 id="使用swiftype实现站内搜索"><a href="#使用swiftype实现站内搜索" class="headerlink" title="使用swiftype实现站内搜索"></a>使用swiftype实现站内搜索</h4><p>在swiftype官网注册安装，默认已经设置好，根据自己的喜好更改。<br>因为默认的搜索框高度不合适，在search field项中，我选了use the swiftype search tab<br>在\hexo\themes\concise\layout_partial\after_footer.ejs中添加安装好给的代码</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo+github搭建博客第三篇&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://xujing15.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://xujing15.github.io/tags/hexo/"/>
+    
+      <category term="github" scheme="http://xujing15.github.io/tags/github/"/>
+    
+      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两天晒网之第二天(1)</title>
+    <link href="http://xujing15.github.io/2017/09/20/20170920_1/"/>
+    <id>http://xujing15.github.io/2017/09/20/20170920_1/</id>
+    <published>2017-09-20T15:59:58.000Z</published>
+    <updated>2017-09-22T10:56:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1/O4fo+a9r8zBTAuNLHvZWgseqAb2+bnE5/p3ivzDe2C7rfM/PAZ2T9buCUo2BS64ShYiOVg39V3jbPc0z7fKQz9xZUEFSpcn5SCI5godQFOu8ocMRnD5K1kYRqEqmZKQWThfdy1G32dfcvThMT6iYZQqWLXWgleowdX5sVYuO4HA6DMqYyfcb7JPmVF/BQTeGo4v3Tcg0/uWWWABd745jrTZ0REZ7lF27Z8lMeqZsPcdOAMxS5ptiP/tGdq8ze73uJkLq7i8ZjtSoBbgicoqGv8LF6P9sDhr6f0LE8tBxXkRPILVfJGxR5VJaqc+uwZnEKARbr8OvHY6HQ5LN1C4j7i6NFdqgeRYjPSTcEqEFGtMPfnQjswOZPf9dv0xIsBBJxs+VkWXt/fWJZIEYNrkZ5EuaHnhJAX7sc1X1iRLgxV9g/aV6Ae2vwGgjegYBe/N7imrBsnj1oVUxid++TxU23YpIb91mFLc/iuWRGPpCYOS9OFz15bRz/Ah3CzyLhaHnXWYepn2qMgef421DoXrLw0YzmRNQvBelLbLp1E6r89vPoAy8ZHFy/qzEgoyt0L0egjdhT2MtkZj4d+A3pbUf3tRojjPQBUpoL/VzvJUGXGJtSACDCANZpd7q7LI/oTc8vB9eNDuPCCIxnU0D4vayX9jEt2krb1Cg53w5qjt829dA3aVnefjg77fxPvl33YcRwBJhOxVmmxN5o6qP1F1V4MdT+cen2+zEhNgJMZT4AEQuZhgMOQ/oCScNSdnC5M4Y5eqYcDaQKm2wkU9LgjtoxrLKAzYI9kklXyuf8cJdbOu52zKvunO0ti0u3nkHtLKRd3cglrnrJPtBsiPaqeCw2pkCUWOdJfDTxl4bUa7gi8WTqFMDVRwyeP3hwrzWLM74045lmx6fINIpBm4BI7HOSBvLzyRdZP70=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月20日 周二 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两天晒网之第一天(2)</title>
+    <link href="http://xujing15.github.io/2017/09/19/20170919_2/"/>
+    <id>http://xujing15.github.io/2017/09/19/20170919_2/</id>
+    <published>2017-09-19T15:59:59.000Z</published>
+    <updated>2017-09-22T10:56:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo+github搭建博客第二篇<br><a id="more"></a><br>hexo设置多标签：tags: [标签1,标签2,标签3]</p><h4 id="添加rss："><a href="#添加rss：" class="headerlink" title="添加rss："></a>添加rss：</h4><p>1.安装RSS插件：<code>npm install hexo-generator-feed --save</code><br>2.在\hexo_config.yml添加<br><code>feed:</code><br>  <code>type: atom</code><br>  <code>path: atom.xml</code><br>  <code>limit: 20</code><br>3.在\hexo\themes\concise_config.yml添加<br><code>rss: /atom.xml</code><br>4.如果已经有RSS一栏，则不用执行此步。在\hexo\themes\concise\layout_partial\header.ejs中，找到ul添加一行代码。<br>5.将\hexo_config.yml中的url添加为自己的网址。<br>url: <a href="http://xujing15.github.io">http://xujing15.github.io</a></p><h4 id="添加sitemap"><a href="#添加sitemap" class="headerlink" title="添加sitemap"></a>添加sitemap</h4><p>1.安装sitemap插件：<code>npm install hexo-generator-sitemap --save</code><br>2.在\hexo_config.yml添加<br><code>sitemap:</code><br><code>path: sitemap.xml</code><br>3.访问xujing15.github.io/sitemap.xml</p><h4 id="添加文章导航"><a href="#添加文章导航" class="headerlink" title="添加文章导航"></a>添加文章导航</h4><p>1.在\hexo\themes\concise\layout_partial\post\article.ejs找到\&lt;%- item.content %>,在\&lt;%- item.content %>上方插入代码<br>2.在\hexo\themes\concise\source\css_partial\article.styl的最后添加代码<br>3.在要使用文章导航的文章首部加入<code>toc: true</code><br>暂时用不到这个，以后用到了在扩充内容，参考这个教程这块更详细<a href="http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/" target="_blank" rel="external">http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/</a></p><h4 id="添加返回顶部"><a href="#添加返回顶部" class="headerlink" title="添加返回顶部"></a>添加返回顶部</h4><p>1.在\hexo\themes\concise\layout_partial中添加文件totop.ejs,在文件中添加以下代码，如果你对返回顶部按钮的位置不满意，可以在下面这段代码的style里面进行参数修改，bottom是按钮相对于窗口底部的位置，right是按钮相对于窗口右部的位置。<br>2.在\hexo\themes\concise\source\js中添加文件totop.js，在文件中添加代码<br>3.添加对以上两段代码的引用，在\hexo\themes\conciese\layout_partial\after_footer.ejs中的最下面，添加代码<br>4.添加返回顶部按钮的图片，选择自己想要用的图片，将图片复制到\hexo\themes\concise\source\imgs目录下，并将图片名字改为scrollup.png即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo+github搭建博客第二篇&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://xujing15.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://xujing15.github.io/tags/hexo/"/>
+    
+      <category term="github" scheme="http://xujing15.github.io/tags/github/"/>
+    
+      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两天晒网之第一天(1)</title>
+    <link href="http://xujing15.github.io/2017/09/19/20170919_1/"/>
+    <id>http://xujing15.github.io/2017/09/19/20170919_1/</id>
+    <published>2017-09-19T15:59:58.000Z</published>
+    <updated>2017-09-22T06:31:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX19qdGUqLdfwkDrTys4xnBW5/iwA6TozbN1csy5bwsfFdK2LVMC5tSwYa5SJElAUcSyBpg2oo/O8QdtHfgQaHiH1nZX7si7ZwyHFN3m9aqAqBlvX3ovG4f3PV1kewhBvMonydritEuffxkaGJi0QmXjwksyvvEqInrXJzWjNtHL6dlQUQ2yb0KTvoBSlM+wYg+6QEsUMikjbeicQgCsrTl9P9IiLIT5C6hEhNEcgsSF092gbn0w7IOsET4W3aKdEzJGWeKDIwO9SYCY0kpMBdA4+33IRf1bn7HmYa+UcobhReA/LVtyRb196z3WzzFMeN3AMJPgin6Q9VGQlcroZhYP6BbMC9vizat48NYdJU2dAIKKXuhTyQZz0CLB16X97PEjqnLNNq3DO6x8MYB76rd5LeuhA3blmJN+Fa2s2GYJhu6P+3Atd79dBQGf0iYbQjggASqieQcmJy6TRRdgbdWhHSrRP87Hfptz5SvsCn+YqsXkfn8AQfjVUn3zd9JPwW35QqzwvQ80vSe8NVSRyoFxbEVooUH4Ymxs=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月19日 周二 阴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三天打鱼之第三天(2)</title>
+    <link href="http://xujing15.github.io/2017/09/18/20170918_2/"/>
+    <id>http://xujing15.github.io/2017/09/18/20170918_2/</id>
+    <published>2017-09-18T15:59:59.000Z</published>
+    <updated>2017-09-22T10:55:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>hexo+github搭建博客第一篇<br><a id="more"></a><br><strong>安装node</strong>：用来生成静态页面的<br><strong>安装git</strong>：把本地的hexo内容提交到github上去<br><strong>申请github</strong>：用来做博客的远程创库、域名、服务器之类的</p><p><code>hexo g</code> #完整命令为hexo generate，生成静态页面至public目录<br><code>hexo s</code> #完整命令为hexo server，用于启动服务器，主要用来本地预览（开启预览访问端口（默认端口4000））<br><code>hexo d</code> #完整命令为hexo deploy，用于将本地文件发布到github上（将.deploy目录部署到GitHub）<br><code>hexo n</code> #完整命令为hexo new，用于新建一篇文章<br><code>hexo new &quot;postName&quot;</code> #新建文章<br><code>hexo new page &quot;pageName&quot;</code> #新建页面<br><code>hexo help</code>  #查看帮助<br><code>hexo version</code>  #查看Hexo的版本</p><h4 id="安装HEXO：sudo-npm-install-g-hexo"><a href="#安装HEXO：sudo-npm-install-g-hexo" class="headerlink" title="安装HEXO：sudo npm install -g hexo"></a>安装HEXO：<code>sudo npm install -g hexo</code></h4><p><strong>初始化</strong>：创建一个文件夹，进入新建的文件夹中：<code>hexo init</code><br><strong>生成静态页面</strong>：还是在刚才新建的文件夹中：<code>hexo generate</code><br><strong>本地启动</strong>：<code>hexo server</code><br>还是本地的博客，可以访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p><h4 id="和github关联"><a href="#和github关联" class="headerlink" title="和github关联"></a>和github关联</h4><p><strong>建立Repository</strong>：建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】<br><strong>配置_config.yml文件</strong>：末尾改成（注意冒号后需要加空格）<br>    deploy:<br>      type: git<br>      repository: <a href="https://github.com/xujing15/xujing15.github.io.git" target="_blank" rel="external">https://github.com/xujing15/xujing15.github.io.git</a><br>      branch: master<br><strong>使用git部署</strong>：<code>npm install hexo-deployer-git –save</code><br><code>hexo deploy</code><br>可以访问<a href="http://xujing15.github.io/">http://xujing15.github.io/</a></p><h4 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h4><p><code>hexo clean</code><br><code>hexo generate</code><br><code>hexo deploy</code></p><p>hexo的配置文件_config.yml</p><h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h4><p><strong>下载</strong>：<code>git clone https://github.com/huangjunhui/concise.git themes/concise</code><br><strong>启用</strong>：修改博客根目录下的config.yml配置文件中的theme属性值，将其修改为concise<br><strong>更新</strong>：<code>cd themes/concise;git pull</code></p><h4 id="添加简介"><a href="#添加简介" class="headerlink" title="添加简介"></a>添加简介</h4><p>1、在\hexo\themes\light\layout_widget下新建名为intro.ejs的文件，编辑内容<br>2、在\hexo\themes\light_config.yml中，添加如下代码：<br><code>widgets:</code><br><code>intro</code></p><h4 id="hexo搭建博客过程中出现的问题"><a href="#hexo搭建博客过程中出现的问题" class="headerlink" title="hexo搭建博客过程中出现的问题"></a>hexo搭建博客过程中出现的问题</h4><p><strong>4000端口被占用</strong>：<br>可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：<br><code>server:</code><br><code>port: 4001</code><br><code>compress: true</code><br><code>header: true</code><br>其中4001可以换成想要运行的端口号。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;hexo+github搭建博客第一篇&lt;br&gt;
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://xujing15.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="http://xujing15.github.io/tags/hexo/"/>
+    
+      <category term="github" scheme="http://xujing15.github.io/tags/github/"/>
+    
+      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三天打鱼之第三天(1)</title>
+    <link href="http://xujing15.github.io/2017/09/18/20170918_1/"/>
+    <id>http://xujing15.github.io/2017/09/18/20170918_1/</id>
+    <published>2017-09-18T15:59:58.000Z</published>
+    <updated>2017-09-21T09:17:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+Tm7DpotuqFdBAUf4Cp0z3RXli6JGHvHmX6gcd1bvY2HGQIZq2h4ARfH9Ptzv8EsHQZCDf4G5TA+NvFRv19rYtKU0ELn2BSTY48UxQX3hUdm5YhXwkm3Rd8mh1o3Wvlu1FfPfkVYocmbMc8Jov1gUVt4XY6TbNb4KRxo9wNLpUAD/6blVfCquzweYva4Yz91IsyWKTNyzq4mzgbXEuV/mTHpSY/Jnuyrk7zoL2dvzSxJN9iWc2DuXSFsbnHYfARwCVnSHQRECfDHO8hVxwFuHwsNem3LhOky94Rsfq4uExHWq9bKELryqm/K7iTFRzpFu0l5F/tuEA1BgEg2AOvkMWWgns7lm5PVh+vOI67WgKxvXW9U3KG4uF02CfGXSkeq2um9yYmJZOh696qHjdN6cRD5Uh6bMWDoTsYI3y036MX+nH5pVAdYXgWj8ATkdYHpZTQPxLM74STXwpiYcuEg6KC6OCf8pk1HJ992EEgeUkxzwcNZsgFFgOVHgfjw+DOea2X95UYmbWGeaGMSqyjF9xjumVyf9lSIRm6yBJbPwsLWHTzWyCicoR6ZdadRpVXzX071FTv00QhqrwRbMcoaYS+nNhP9ju+Sj96AGwLgvRfPmosr98bMWi/JBpHm5u7bo7Kay6psqpESc7bVITHdxop3MQn0HMARSO9iWdaGz4gNsGWgPrZxWw+SlmhPh3bm9um+hDPmJr/1Ds7DWllVyo6vw3JdEUkeNikP4cYfYGw6HaU4fEZNBCNI+rowedNSQ/rYBaEO7TYgU0ItdiIgnOn1DziXpQ195e78m6yXsxe+rKuC7HaZRaLV/uFMuILgImzAzs96uhBQ==</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2017年9月18日 周一 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
+  
+</feed>
