@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>0055</title>
+    <style type="text/css">
+        body {
+            margin:200px;
+        }
+        img{
+            float: right;
+            margin-top:-200px;
+            margin-left:-100px;
+        }
+    </style>
+</head>
+<body>
+<img src="012.png"/>
+<script type="text/javascript">
+    var title = new Array("编程语言", "专辑介绍", "作者");
+
+    var funclass = new Array();
+
+    funclass[0] = new Array("HTML5", "HTML5-庖丁解牛", "不二如是");
+    funclass[1] = new Array("CSS3", "HTML5-庖丁解牛", "不二如是");
+    funclass[2] = new Array("JavaScript", "JavaScript-庖丁解牛", "不二如是");
+    funclass[3] = new Array("Scratch", "小天才养殖场", "不二如是");
+
+    document.write("<table border='1'>");
+    document.write("<tr>");
+    for (var i = 0; i < title.length; i++) {
+        document.write("<th>" + title[i] + "</th>");
+    }
+    document.write("</tr>");
+
+    for (var i = 0; i < funclass.length; i++) {
+        document.write("<tr>");
+        for (var j = 0; j < funclass[i].length; j++) {
+            document.write("<td>" + funclass[i][j] + "</td>");
+        }
+        document.write("</tr>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=" charset="UTF-8"></script>
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+  
+  <title>第四天(1) | XuJ</title>
+  <meta name="author" content="xujing">
+  
+  <meta name="description" content="续深入浅出SQL中文版(Head First SQL)2018年6月29日 周六 晴">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="第四天(1)"/>
+  <meta property="og:site_name" content="XuJ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/imgs/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="XuJ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header><div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/imgs/logo.png" alt="XuJ" title="XuJ"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name">XuJ</h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li> <a href="/atom.xml">RSS</a> </li>
+				</ul>
+			</nav>			
+</div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+	第四天(1)
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://xujing15.github.io" title="xujing">xujing</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2018-06-30T15:59:58.000Z" itemprop="datePublished">2018-06-30</time>
+    更新日期:<time datetime="2018-07-05T00:24:38.867Z" itemprop="dateModified">2018-07-05</time>
+    
+  </p>
+</header>
+    <div class="entry">
+		
+                
+        <p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年6月29日 周六 晴<br><a id="more"></a></p>
+<p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p>
+<p></p><h2>第九章 子查询</h2><p></p>
+<ul><br><li>子查询 subquery<br>    是被另一个查询包围的查询，也可称为内层查询 INNER query<br>    外层查询 OUTER query/包含查询 containing query<br>    外层查询+内层查询=以子查询进行查询   两个查询结合而成的一个查询就是包含子查询的查询<br>    <code>SELECT mc.first_name,mc_last_name,mc_phone,jc.title
+    FROM job_current AS jc NATURAL JOIN my_contacts AS mc
+    WHERE jc.title IN (SELECT title FROM job_listings);</code><br></li><br><li>下面两个查询等价，一个是子查询，一个是联接<br>    <code>SELECT last_name,first_name
+    FROM my_contacts
+    WHERE zip_code = (SELECT zip_code FROM zip_code WHERE city = &#39;Memphis&#39; AND state = &#39;TN&#39;);</code><br><br>    <code>SELECT last_name,first_name
+    FROM my_contacts mc 
+    NATURAL JOIN zip_code zc
+    WHERE zc.city = &#39;Memphis&#39;
+    AND zc.state = &#39;TN&#39;;</code><br></li><br><li>一般而言，子查询必须返回一个值。使用IN是例外情况。大部分时候，子查询只需要返回单一值。</li><br><li>子查询选取列<br>    <code>SELECT mc.first_name,mc.last_name,
+    (SELECT state
+    FROM zip_code
+    WHERE mc.zip_code = zip_code) AS state
+    FROM my_contacts mc;</code><br></li><br><li>如果子查询可以独立运行且不会引用外层查询的任何结果，即称为非关联子查询（noncorrelated subquery）。先处理内层查询，查询结果再用于外层查询的WHERE子句。<br></li><br><li>交叉联接和关联子查询查询速度慢<br>    联接比子查询查询速度快<br></li><br><li><code>SELECT mc.first_name,mc.last_name,jc.salary,
+    jc.salary - (SELECT AVG(salary) FROM job_current WHERE title = &#39;Web Developer&#39;) 
+    FROM my_contacts mc NATURAL JOIN job_current jc
+    WHERE jc.title = &#39;Web Developer&#39;);</code><br>    输出的最后一列是薪资-平均薪资<br></li><br><li>有多个值的非关联子查询：IN,NOT IN<br>    IN或NOT IN在其中根据子查询的结果检查外层查询，比较两者是否相符（或不相符）<br>    非关联子查询使用IN或NOT IN来检查子查询返回的值是否为集合的成员之一（或不是集合的成员之一）<br></li><br><li>关联子查询<br>    关联名称（别名）<br>    <code>SELECT mc.first_name,mc.last_name, 
+    FROM my_contacts AS mc
+    WHERE
+    3 = (
+    SELECT COUNT(*) FROM contact_interest
+    WHERE contact_id = mc.contact_id
+    );</code><br></li><br><li>NOT EXISTS   如果没有找到指定的内容，视为条件成立<br>    EXISTS<br>    <code>SELECT mc.first_name first_name,mc.last_name last_name,mc.email email, 
+    FROM my_contacts AS mc
+    WHERE NOT EXISTS
+    (SELECT * FROM job_current jc
+    WHERE mc.contact_id = jc.contact_id);</code><br></li><br><li>子查询可以放在子查询中，嵌套查询</li><br></ul>
+    </div>
+    <footer>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/sql/">sql</a>
+  </div>
+
+		<div class="bdsharebuttonbox">
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_count" data-cmd="count"></a>
+</div>
+<script>
+window._bd_share_config=
+{
+	"common":{
+		"bdSnsKey":{},
+		"bdText":"",
+		"bdMini":"2",
+		"bdMiniList":false,
+		"bdPic":"",
+		"bdStyle":"0",
+		"bdSize":"24"
+	},
+	"share":{},
+	"image":{
+		"viewList":["qzone","tsina","tqq","renren","weixin","fbook","twi"],
+		"viewText":"分享到：",
+		"viewSize":"24"
+	},
+	"selectShare":{
+		"bdContainerClass":null,
+		"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","fbook","twi"]
+	}
+};
+with(document)0[
+	(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)
+];
+</script>    
+        <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ <nav id="pagination" >
+    
+    <a href="/2018/07/05/20180705_1/" class="alignleft prev" title="第五天(1)">第五天(1)</a>
+    
+    
+    <a href="/2018/06/29/20180629_1/" class="alignright next" title="第三天(1)">第三天(1)</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//baidu.com/baidu" method="get" accept-charset="utf-8">
+    <input type="search" name="word" results="0" placeholder="搜索">
+    <input type="hidden" name="si" value="xujing15.github.io">
+    <input name=tn type=hidden value="bds">
+	<input name=cl type=hidden value="3">
+	<input name=ct type=hidden value="2097152">
+	<input name=s type=hidden value="on">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/github/">github</a><small>1</small></li>
+  
+    <li><a href="/categories/grafting-through/">grafting through</a><small>1</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>5</small></li>
+  
+    <li><a href="/categories/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/github/" style="font-size: 12.5px;">github</a> <a href="/tags/grafting-through/" style="font-size: 10px;">grafting through</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/html，css/" style="font-size: 10px;">html，css</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/搭建博客/" style="font-size: 15px;">搭建博客</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日记/" style="font-size: 20px;">日记</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+  </div>
+</div>
+
+
+  <iframe width="100%" height="140" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1923610190&verifier=6af5ad6a&colors=fafafa,fafafa,666666,0082cb,ecfbfd&dpc=1"></iframe>
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>本体：许菁</li>
+<li>外文：cindy</li>
+<li>现状：读研ing</li>
+<li>QQ  ：386785107</li>
+<li>邮箱：xujing8231@gmail.com</li>
+</ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi,I&#39;m new here. <br/>
+			I made a few changes.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/6036063647" target="_blank" title="weibo"></a>
+		
+		
+        
+        <a href="https://github.com/xujing15" target="_blank" title="github"></a>
+        
+        
+        <a href="https://zhihu.com/people/xu-jing-77-59-54" target="_blank" title="zhihu"></a>
+        
+        
+        <a href="mailto:xujing8231@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/huangjunhui/concise" target="_blank" title="Concise">Concise</a> © 2018 
+		
+		<a href="http://xujing15.github.io/about" target="_blank" title="xujing">xujing</a>
+		
+		</p>
+</div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/counter.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:300px;right:30px;cursor: pointer;">
+<a title="返回顶部"><img src="/imgs/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','331116ob5_5qXeu59nXN','2.0.0');
+</script>
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+

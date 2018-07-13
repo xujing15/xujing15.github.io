@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=" charset="UTF-8"></script>
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+  
+  <title>第三天(1) | XuJ</title>
+  <meta name="author" content="xujing">
+  
+  <meta name="description" content="续深入浅出SQL中文版(Head First SQL)2018年6月29日 周五 晴">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="第三天(1)"/>
+  <meta property="og:site_name" content="XuJ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/imgs/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="XuJ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header><div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/imgs/logo.png" alt="XuJ" title="XuJ"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name">XuJ</h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li> <a href="/atom.xml">RSS</a> </li>
+				</ul>
+			</nav>			
+</div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+	第三天(1)
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://xujing15.github.io" title="xujing">xujing</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2018-06-29T15:59:58.000Z" itemprop="datePublished">2018-06-29</time>
+    更新日期:<time datetime="2018-06-30T15:00:48.271Z" itemprop="dateModified">2018-06-30</time>
+    
+  </p>
+</header>
+    <div class="entry">
+		
+                
+        <p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年6月29日 周五 晴<br><a id="more"></a></p>
+<p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p>
+<p></p><h2>第八章 联接与多张表的操作</h2><p></p>
+<ul><br><li><code>UPDATE my_contacts 
+    SET interests = 
+    SUBSTR(interests,LENGTH(interest1) + 2);</code><br><br>    2是逗号和空格<br>    SUBSTR返回本列内原始字符串的一部分。它接受字符串并切除我们用括号指定的第一部分，然后返回剩下的部分<br></li><br><li>首先CREATE TABLE,然后利用SELECT进行INSERT<br>    <code>CREATE TABLE profession
+    (
+        id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        profesion VARCHAR(20)
+    );
+    INSERT INTO profession (profession)
+       SELECT profession FROM my_contacts
+       GROUP BY profession
+       ORDER BY profession;</code><br>    注意(profession)这块   空表填内容<br></li><br><li>利用SELECT进行CREATE TABLE,然后ALTER以添加主键<br>    <code>CREATE TABLE profession AS
+       SELECT profession FROM my_contacts
+       GROUP BY profession
+       ORDER BY profession;
+    ALTER TABLE profession
+       ADD COLUMN id INT NOT NULL AUTO_INCREMENT FIRST,
+       ADD PRIMARY KEY(id);</code><br>    注意AS   有内容表，修改主键<br></li><br><li>同时CREATE、SELECT、INSERT<br>    CREATE TABLE的同时设置主键并利用SELECT填入数据<br>    <code>CREATE TABLE profession
+    (
+        id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        profesion VARCHAR(20)
+    ) AS
+       SELECT profession FROM my_contacts
+       GROUP BY profession
+       ORDER BY profession;</code><br>    注意AS   空表填同时内容<br></li><br><li>列别名<br>    创建别名：在查询中首次使用原始列名的地方后接AS并设定要采用的别名。<br>    <code>CREATE TABLE profession
+    (
+        id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        profesion VARCHAR(20)
+    ) AS
+       SELECT profession AS mc_prof FROM my_contacts
+       GROUP BY mc_prof
+       ORDER BY mc_prof;</code><br>    如这里的AS mc_prof<br></li><br><li>表别名，又称为correlation name（相关名称）<br>    创建表别名：在查询中首次出现表名的地方后接AS并设定别名。<br>    <code>SELECT profession AS mc_prof
+    FROM my_contacts AS mc
+    GROUP BY mc_prof
+    ORDER BY mc_prof;</code><br><br>    设定别名可以省略AS<br>    <code>SELECT profession mc_prof
+    FROM my_contacts mc
+    GROUP BY mc_prof
+    ORDER BY mc_prof;</code><br></li><br><li>联接<br>    交叉联接：<br>    <code>SELECT t.toy,b.boy
+    FROM toys AS t
+        CROSS JOIN
+        boys AS b;</code><br>    点号前是表名，点号后是表内的列名，这里以别名代替表的全名<br>    CROSS JOIN返回两张表的每一行相乘的结果<br><br>    CROSS JOIN可以省略不写，只用逗号代替（COMMA JOIN）<br>    <code>SELECT toys.toy,boys.boy
+    FROM toys,boys;</code><br><br>    交叉联接是内联接的一种。<br>    内联接基本上就是通过查询中的条件移除了某些结果数据行后的交叉联接<br></li><br><li>内联接   INNER JOIN<br>    利用条件判断中的比较运算符结合两张表的记录，只有联接记录符合条件时才会返回列<br>    <code>SELECT somecoulumns
+    FROM table1
+        INNER JOIN
+        table2
+    ON somecondition;</code><br>    ON这里也可以使用关键字WHERE   这里省略了指定别名的部分<br>    条件式里可采用任何一个比较运算符<br></li><br><li>内联接-相等联接（equijoin）   测试相等性的内联接<br>    <code>SELECT boys.boy,toys.toy
+    FROM boys
+        INNER JOIN
+        toys
+    ON boys.toy_id = toys.toy_id;</code><br></li><br><li>内联接-不等联接（non-equijoin）   测试不相等性的内联接<br>    不等联接则返回任何不相等的记录<br>    <code>SELECT boys.boy,toys.toy
+    FROM boys
+        INNER JOIN
+        toys
+    ON boys.toy_id &lt;&gt; toys.toy_id
+    ORDER BY boys.boy;</code><br></li><br><li>内联接-自然联接（natural join）   利用相同列名的内联接<br>    自然联接只有在联接的列在两张表中的名称都相同时才会有用,不使用ON子句的内联接<br>    <code>SELECT boys.boy,toys.toy
+    FROM boys
+        NATURAL JOIN
+        toys;</code><br></li><br><li>Foreign key   外键<br>    外键是表中的某一列，它引用到另一个表的主键<br>    外键使用的主键被称为父键，主键所在的表称为父表<br>    外键能用于确认一张表中的行与另一张表中的行相对应<br>    外键的值可以是NULL<br>    外键值不需要唯一，通常，外键都没有唯一性<br></li><br><li>创建在结构内的键被称为约束（constraint）<br>    插入外键列的值必须已经存在于父表的来源列中，这是引用完整性（referential integrity）<br>    创建外键作为表的约束提供了明确的优势，如果违反了规则，约束会阻止我们破坏表<br></li><br><li>创建带有外键的表<br>    <code>CREATE TABLE interests (
+    int_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    interest VARCHAR(50) NOT NULL,
+    contact_id INT NOT NULL,
+    CONSTRAINT my_contacts_contact_id_fk
+    FOREIGN KEY (contact_id)
+    REFERENCES my_contacts (contact_id)
+    );</code><br>    另一种指定主键的方式，在同一行代码中加入PRIMARY KEY命令<br>    创建外键和创建索引列一样的设定<br>    CONSTRAINT 键的来源表<strong>键的名称</strong>说明是外键<br></li><br></ul>
+    </div>
+    <footer>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/sql/">sql</a>
+  </div>
+
+		<div class="bdsharebuttonbox">
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_count" data-cmd="count"></a>
+</div>
+<script>
+window._bd_share_config=
+{
+	"common":{
+		"bdSnsKey":{},
+		"bdText":"",
+		"bdMini":"2",
+		"bdMiniList":false,
+		"bdPic":"",
+		"bdStyle":"0",
+		"bdSize":"24"
+	},
+	"share":{},
+	"image":{
+		"viewList":["qzone","tsina","tqq","renren","weixin","fbook","twi"],
+		"viewText":"分享到：",
+		"viewSize":"24"
+	},
+	"selectShare":{
+		"bdContainerClass":null,
+		"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","fbook","twi"]
+	}
+};
+with(document)0[
+	(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)
+];
+</script>    
+        <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ <nav id="pagination" >
+    
+    <a href="/2018/06/30/20180630_1/" class="alignleft prev" title="第四天(1)">第四天(1)</a>
+    
+    
+    <a href="/2018/06/26/20180626_1/" class="alignright next" title="第二天(1)">第二天(1)</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//baidu.com/baidu" method="get" accept-charset="utf-8">
+    <input type="search" name="word" results="0" placeholder="搜索">
+    <input type="hidden" name="si" value="xujing15.github.io">
+    <input name=tn type=hidden value="bds">
+	<input name=cl type=hidden value="3">
+	<input name=ct type=hidden value="2097152">
+	<input name=s type=hidden value="on">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/github/">github</a><small>1</small></li>
+  
+    <li><a href="/categories/grafting-through/">grafting through</a><small>1</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>5</small></li>
+  
+    <li><a href="/categories/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/github/" style="font-size: 12.5px;">github</a> <a href="/tags/grafting-through/" style="font-size: 10px;">grafting through</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/html，css/" style="font-size: 10px;">html，css</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/搭建博客/" style="font-size: 15px;">搭建博客</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日记/" style="font-size: 20px;">日记</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+  </div>
+</div>
+
+
+  <iframe width="100%" height="140" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1923610190&verifier=6af5ad6a&colors=fafafa,fafafa,666666,0082cb,ecfbfd&dpc=1"></iframe>
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>本体：许菁</li>
+<li>外文：cindy</li>
+<li>现状：读研ing</li>
+<li>QQ  ：386785107</li>
+<li>邮箱：xujing8231@gmail.com</li>
+</ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi,I&#39;m new here. <br/>
+			I made a few changes.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/6036063647" target="_blank" title="weibo"></a>
+		
+		
+        
+        <a href="https://github.com/xujing15" target="_blank" title="github"></a>
+        
+        
+        <a href="https://zhihu.com/people/xu-jing-77-59-54" target="_blank" title="zhihu"></a>
+        
+        
+        <a href="mailto:xujing8231@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/huangjunhui/concise" target="_blank" title="Concise">Concise</a> © 2018 
+		
+		<a href="http://xujing15.github.io/about" target="_blank" title="xujing">xujing</a>
+		
+		</p>
+</div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/counter.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:300px;right:30px;cursor: pointer;">
+<a title="返回顶部"><img src="/imgs/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','331116ob5_5qXeu59nXN','2.0.0');
+</script>
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+

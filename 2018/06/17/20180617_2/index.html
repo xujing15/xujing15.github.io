@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=" charset="UTF-8"></script>
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+  
+  <title>一曝十寒之第十寒(2) | XuJ</title>
+  <meta name="author" content="xujing">
+  
+  <meta name="description" content="续深入浅出SQL中文版(Head First SQL)">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="一曝十寒之第十寒(2)"/>
+  <meta property="og:site_name" content="XuJ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/imgs/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="XuJ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header><div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/imgs/logo.png" alt="XuJ" title="XuJ"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name">XuJ</h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li> <a href="/atom.xml">RSS</a> </li>
+				</ul>
+			</nav>			
+</div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+	一曝十寒之第十寒(2)
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://xujing15.github.io" title="xujing">xujing</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2018-06-17T15:59:58.000Z" itemprop="datePublished">2018-06-17</time>
+    更新日期:<time datetime="2018-06-29T03:05:45.039Z" itemprop="dateModified">2018-06-29</time>
+    
+  </p>
+</header>
+    <div class="entry">
+		
+                
+        <p>续<br>深入浅出SQL中文版(Head First SQL)<br><a id="more"></a></p>
+<p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p>
+<p></p><h2>第四章 聪明的表设计</h2><p></p>
+<ul><br><li>使用数据的方式将影响设计表的方式。</li><br><li>数据原子性：列中的数据是查询所需的最小单位<br>    规则一：具原子性表示在同一列中不会存储多个类型相同的数据。<br>    规则二：具原子性表示不会用多个列来存储类型相同的数据。<br></li><br><li>规范化表的优点：<br>    1.规范化表中没有重复的数据，可以减小数据库的大小。<br>    2.因为查找的数据较少，你的查询会更为快速。<br></li><br><li>FIRST NORMAL FROM(1NF)第一范式：每个数据行均需包含原子性数据值，而且每个数据行均需具有唯一的识别方法。<br></li><br><li>PRIMARY KEY   主键。能识别<b>唯一</b>数据行的列。<br>    注意：主键不可以为NULL<br>    插入新纪录时必须指定主键值<br>    主键必须简洁<br>    主键值不可以被修改<br></li><br><li>最佳主键可能是新的主键</li><br><li><code>SHOW CREATE TABLE 表名;</code>  呈现创建现有表的语句<br>    <code>SHOW COLUMNS FROM tablename;</code>   显示表的所有列及其数据类型，还有其他关于列的细节信息<br>    <code>SHOW CREATE DATABASE databasename;</code>   呈现创建现有数据库的语句<br>    <code>SHOW INDEX FROM tablename;</code>   重要的命令，显示任何有索引的列及其索引类型，目前接触到的索引是主键<br>    <code>SHOW WARNINGS;</code>   得到确切的警告消息<br></li><br><li>创建带有主键的表：<br>    <code>CREATE TABLE my_contacts 
+    (
+    contact_id INT NOT NULL AUTO_INCREMENT,
+    ......,
+    ......,
+    ......,
+    PRAMIRY KEY(contact_id)
+    );</code><br></li><br><li>AUTO_INCREMENT   列的声明使用这个关键字，会自动给列赋予唯一的递增整数值（可以被覆盖）</li><br><br><h3>补充内容：</h3><br><li><code>CREATE TABLE tableName SELECT * FROM databaseName.tableName;</code>  从一个数据库复制表到另一个数据库</li><br><li><code>mysql -uroot -p</code>   连接到本机上的mysql<br>    exit   退出mysql<br></li><br></ul><br><hr><br><h2>第五章 ALTER</h2><br><ul><br><li>ALTER ADD   列添加到表中<br>    ALTER DROP   删除表中的列<br>    ALTER CHANGE   修改现有列的名称和类型<br>    ALTER MODIFY   只修改现有列的类型(位置，我的没成功)<br><br>    <code>ALTER TABLE my_contacts
+    ADD COLUMN contact_id INT NOT NULL AUTO_INCREMENT FIRST,
+    ADD PRIMARY KEY (contact_id);</code><br>    添加主键列，自动递增，放在第一位<br><br>    <code>ALTER TABLE old_tablename RENAME TO new_tablename;</code>改变表名<br><br>    <code>ALTER TABLE tablename
+    CHANGE COLUMN old_columnname new_columnname new_type;</code><br><br>    <code>ALTER TABLE tablename
+    MODIFY COLUMN columnname type;</code><br><br>    <code>ALTER TABLE tablename
+    DROP COLUMN columnname;</code><br><br>    <code>ALTER TABLE tablename
+    DROP PRIMARY KEY;</code><br>    移除主键的设置<br><br>    <code>ALTER TABLE tablename CHANGE anothercolumnname anothercolumnname INT(11) NOT NULL AUTO_INCREMENT;</code><br>    <code>ALTER TABLE tablename CHANGE columnname columnname INT(11) NOT NULL;</code><br>    移除某列的自动递增<br>    表中只有一列可以加上AUTO_INCREMENT，并且该列必须是整数类型（不能包含NULL）<br></li><br><li>和ADD搭配<br>    关键字FIRST,SECOND,THIRD…LAST<br>    AFTER column_name,BEFORE column_name<br></li><br><li>类型转换可能会丢失数据</li><br><li>文本值以及有CHAR或VARCHAR类型的列中存储的值都被成为字符串（string）<br>    String Function   字符串函数   可修改字符串列的内容副本并以查询结果的形式返回，原始数据不会改变<br>    SELECT RIGHT(location, 2) FROM my_contacts;<br>    RIGHT()   从列的右侧选取一定数量的字符<br>    LEFT()    左侧<br><br>    <code>SELECT SUBSTRING_INDEX(location, &#39;,&#39;, 1) FROM my_contacts;</code><br>    截取单引号里（逗号）前的子字符串，1是第一个逗号，2是第二个，以此类推<br><br>    SUBSTRING(you_string, start_position, length)<br>    截取起始位置，一定长度的子字符串<br>    UPPER(your_string)<br>    LOWER(your_string)<br>    字符串全部大写/小写<br>    REVERSE(your_string)<br>    反转字符串<br>    LTRIM(your_string)<br>    RTRIM(your_string)<br>    清楚左侧/右侧多余的字符串<br>    LENGTH(your_string)<br>    返回字符串的长度<br></li><br><li>更新列中的内容UPDATE<br>    <code>UPDATE table_name
+    SET column_name = newvalue (WHERE ...);
+    UPDATE my_contacts
+    SET state = RIGHT(location, 2);</code>更新表中state列的所有内容<br><br>    字符串函数可以和SELECT,UPDATE,DELETE搭配使用<br></li><br></ul>
+    </div>
+    <footer>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/sql/">sql</a>
+  </div>
+
+		<div class="bdsharebuttonbox">
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_count" data-cmd="count"></a>
+</div>
+<script>
+window._bd_share_config=
+{
+	"common":{
+		"bdSnsKey":{},
+		"bdText":"",
+		"bdMini":"2",
+		"bdMiniList":false,
+		"bdPic":"",
+		"bdStyle":"0",
+		"bdSize":"24"
+	},
+	"share":{},
+	"image":{
+		"viewList":["qzone","tsina","tqq","renren","weixin","fbook","twi"],
+		"viewText":"分享到：",
+		"viewSize":"24"
+	},
+	"selectShare":{
+		"bdContainerClass":null,
+		"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","fbook","twi"]
+	}
+};
+with(document)0[
+	(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)
+];
+</script>    
+        <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ <nav id="pagination" >
+    
+    <a href="/2018/06/19/20180619_1/" class="alignleft prev" title="第一天（1）">第一天（1）</a>
+    
+    
+    <a href="/2018/06/17/20180617_1/" class="alignright next" title="一曝十寒之第十寒(1)">一曝十寒之第十寒(1)</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//baidu.com/baidu" method="get" accept-charset="utf-8">
+    <input type="search" name="word" results="0" placeholder="搜索">
+    <input type="hidden" name="si" value="xujing15.github.io">
+    <input name=tn type=hidden value="bds">
+	<input name=cl type=hidden value="3">
+	<input name=ct type=hidden value="2097152">
+	<input name=s type=hidden value="on">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/github/">github</a><small>1</small></li>
+  
+    <li><a href="/categories/grafting-through/">grafting through</a><small>1</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>5</small></li>
+  
+    <li><a href="/categories/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/github/" style="font-size: 12.5px;">github</a> <a href="/tags/grafting-through/" style="font-size: 10px;">grafting through</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/html，css/" style="font-size: 10px;">html，css</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/搭建博客/" style="font-size: 15px;">搭建博客</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日记/" style="font-size: 20px;">日记</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+  </div>
+</div>
+
+
+  <iframe width="100%" height="140" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1923610190&verifier=6af5ad6a&colors=fafafa,fafafa,666666,0082cb,ecfbfd&dpc=1"></iframe>
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>本体：许菁</li>
+<li>外文：cindy</li>
+<li>现状：读研ing</li>
+<li>QQ  ：386785107</li>
+<li>邮箱：xujing8231@gmail.com</li>
+</ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi,I&#39;m new here. <br/>
+			I made a few changes.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/6036063647" target="_blank" title="weibo"></a>
+		
+		
+        
+        <a href="https://github.com/xujing15" target="_blank" title="github"></a>
+        
+        
+        <a href="https://zhihu.com/people/xu-jing-77-59-54" target="_blank" title="zhihu"></a>
+        
+        
+        <a href="mailto:xujing8231@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/huangjunhui/concise" target="_blank" title="Concise">Concise</a> © 2018 
+		
+		<a href="http://xujing15.github.io/about" target="_blank" title="xujing">xujing</a>
+		
+		</p>
+</div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/counter.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:300px;right:30px;cursor: pointer;">
+<a title="返回顶部"><img src="/imgs/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','331116ob5_5qXeu59nXN','2.0.0');
+</script>
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+

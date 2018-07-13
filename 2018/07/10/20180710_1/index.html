@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=" charset="UTF-8"></script>
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+  
+  <title>第六天(1) | XuJ</title>
+  <meta name="author" content="xujing">
+  
+  <meta name="description" content="续深入浅出SQL中文版(Head First SQL)2018年7月10日 周二 晴">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="第六天(1)"/>
+  <meta property="og:site_name" content="XuJ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/imgs/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="XuJ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header><div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/imgs/logo.png" alt="XuJ" title="XuJ"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name">XuJ</h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li> <a href="/atom.xml">RSS</a> </li>
+				</ul>
+			</nav>			
+</div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+	第六天(1)
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://xujing15.github.io" title="xujing">xujing</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2018-07-10T15:59:58.000Z" itemprop="datePublished">2018-07-10</time>
+    更新日期:<time datetime="2018-07-11T13:38:16.609Z" itemprop="dateModified">2018-07-11</time>
+    
+  </p>
+</header>
+    <div class="entry">
+		
+                
+        <p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年7月10日 周二 晴<br><a id="more"></a></p>
+<p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p>
+<p></p><h2>第十一章 约束、视图与事务</h2><p></p>
+<ul><br><li>有AUTO_INCREMENT列时不需要放入数据值。两个单引号要求表为我们插入主键列的值</li><br><li>约束（constraint）限定了可以插入列的内容，而我们创建表时就要加入约束<br>    学习过的约束：NOT NULL,PRIMARY KEY,FOREIGN KEY,UNIQUE<br><br>    CHECK检查 约束限定允许插入某个列的值。它与WHERE子句都使用相同的条件表达式<br>    <code>CREATE TABLE piggy_bank
+    (
+        id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+        coin CHAR(1) CHECK (coin IN (&#39;P&#39;,&#39;N&#39;,&#39;D&#39;,&#39;Q&#39;))
+    );</code><br>    在MySQL中，无法以CHECK强化数据完整性<br><br>    为性别列设定检查约束<br>    <code>ALTER TABLE my_contacts
+    ADD CONSTRAINT CHECK gender IN (&#39;M&#39;,&#39;F&#39;);</code><br></li><br><li>创建视图   视图适合简化复杂查询<br>   <code>CREATE VIEW web_designers AS
+    SELECT mc.first_name,mc.last_name,mc.phone,mc.email
+    FROM my_contacts mc
+    NATURAL JOIN job_desired jd
+    WHERE jd.title = &#39;Web Designer&#39;;</code><br>    也可以改用<br>    <code>CREATE VIEW web_designers AS
+    SELECT mc.first_name,mc.last_name,mc.phone,mc.email
+    FROM my_contacts mc
+    INNER JOIN job_desired jd
+    ON mc.contact_id = jd.contact_id;</code><br><br>    <code>CREATE VIEW tech_writer_jobs AS
+    SELECT title,salary,description,zip
+    FROM job_listings
+    WHERE title = &#39;Technical Writer&#39;;</code><br></li><br><li>在SELECT语句中使用视图<br>    <code>SELECT * FROM web_designers;</code><br><br>    FROM子句需要表<br>    当SELECT语句的结果是一个虚拟表时，若没有别名，SQL就无法取得其中的表<br></li><br><li>基本上视图是一个只有在查询中使用VIEW时才存在的表。它被视为虚拟表 virtual table，因为其行为和表一样，也能执行表可用的操作。<br><br>    视图也可以和INSERT,UPDATE和DELETE搭配使用<br></li><br><li>带有CHECK OPTION的视图<br>    CHECK OPTION检查每个进行INSERT或DELETE的查询，它根据视图中的WHERE子句来判断这些查询可否执行<br><br>    使用MySQL时，可用CHECK OPTION模仿CHECK CONSTRAINT的功能<br>    当数据库的使用者不只一人时，CHECK CONSTRAINT与视图均有助于维护控制权<br></li><br><li>可更新视图包括引用表里所有为NOT NULL的列<br><br>    DROP VIEW清理空间<br>    <code>DROP VIEW pb_dimes;</code><br></li><br><li>事务 transaction是一群可完成一组工作的SQL语句<br>    在事务过程中，如果所有步骤无法不受干扰地完成，则不该完成任何单一步骤<br>    一组必须同进退的查询。如果这些查询无法不受干扰地全部执行完毕，则不承认其中的部分查询造成的改变<br><br>    经典ACID 检测<br>    A：ATOMICITY原子性<br>       事务里的每一个步骤都必须完成，否则只能都不完成<br>    C：CONSISTENCY一致性<br>       事务完成后应该维持数据库的一致性<br>    I：ISOLATION隔离性<br>       表示每次事务都会看到具有一致性的数据库，无论其他事务有什么行动<br>    D：DURABILITY持久性<br>       事务完成后，数据库需要正确地存储数据并保护数据免受断电或其他威胁的伤害<br></li><br><li>有三种SQL事务工具可以保障账户的安全：<br>    START TRANSACTION;<br>    持续追踪后续所有SQL语句，直到输入COMMIT或ROLLBACK为止<br>    COMMIT;<br>    等到我们满意后再提交（COMMIT）所有程序代码造成的改变<br>    ROLLBACK;<br>    回滚，回到事务开始前的状态<br><br>    在COMMIT之前数据库不会发生任何改变<br></li><br><li>必须用START TRANSACTION告诉RDBMS“事务开始”，才能追踪事务开始的地方并知道恢复的程度<br>    使用START TRANSACTION来测试查询<br></li><br><li>存储引擎必须是BDB或InnoDB，两种支持事务的引擎之一<br>    BDB与InnoDB是两种RDBMS在幕后存储数据的可能方式<br>    这些就是存储引擎，使用其中一种可确保事务能够使用<br><br>    改变存储引擎的语法：<br>    ALTER TABLE your_table TYPE = InnoDB;<br></li><br></ul>
+    </div>
+    <footer>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/sql/">sql</a>
+  </div>
+
+		<div class="bdsharebuttonbox">
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_count" data-cmd="count"></a>
+</div>
+<script>
+window._bd_share_config=
+{
+	"common":{
+		"bdSnsKey":{},
+		"bdText":"",
+		"bdMini":"2",
+		"bdMiniList":false,
+		"bdPic":"",
+		"bdStyle":"0",
+		"bdSize":"24"
+	},
+	"share":{},
+	"image":{
+		"viewList":["qzone","tsina","tqq","renren","weixin","fbook","twi"],
+		"viewText":"分享到：",
+		"viewSize":"24"
+	},
+	"selectShare":{
+		"bdContainerClass":null,
+		"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","fbook","twi"]
+	}
+};
+with(document)0[
+	(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)
+];
+</script>    
+        <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ <nav id="pagination" >
+    
+    <a href="/2018/07/11/20180711_1/" class="alignleft prev" title="第七天(1)">第七天(1)</a>
+    
+    
+    <a href="/2018/07/05/20180705_1/" class="alignright next" title="第五天(1)">第五天(1)</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//baidu.com/baidu" method="get" accept-charset="utf-8">
+    <input type="search" name="word" results="0" placeholder="搜索">
+    <input type="hidden" name="si" value="xujing15.github.io">
+    <input name=tn type=hidden value="bds">
+	<input name=cl type=hidden value="3">
+	<input name=ct type=hidden value="2097152">
+	<input name=s type=hidden value="on">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/github/">github</a><small>1</small></li>
+  
+    <li><a href="/categories/grafting-through/">grafting through</a><small>1</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>5</small></li>
+  
+    <li><a href="/categories/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/github/" style="font-size: 12.5px;">github</a> <a href="/tags/grafting-through/" style="font-size: 10px;">grafting through</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/html，css/" style="font-size: 10px;">html，css</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/搭建博客/" style="font-size: 15px;">搭建博客</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日记/" style="font-size: 20px;">日记</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+  </div>
+</div>
+
+
+  <iframe width="100%" height="140" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1923610190&verifier=6af5ad6a&colors=fafafa,fafafa,666666,0082cb,ecfbfd&dpc=1"></iframe>
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>本体：许菁</li>
+<li>外文：cindy</li>
+<li>现状：读研ing</li>
+<li>QQ  ：386785107</li>
+<li>邮箱：xujing8231@gmail.com</li>
+</ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi,I&#39;m new here. <br/>
+			I made a few changes.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/6036063647" target="_blank" title="weibo"></a>
+		
+		
+        
+        <a href="https://github.com/xujing15" target="_blank" title="github"></a>
+        
+        
+        <a href="https://zhihu.com/people/xu-jing-77-59-54" target="_blank" title="zhihu"></a>
+        
+        
+        <a href="mailto:xujing8231@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/huangjunhui/concise" target="_blank" title="Concise">Concise</a> © 2018 
+		
+		<a href="http://xujing15.github.io/about" target="_blank" title="xujing">xujing</a>
+		
+		</p>
+</div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/counter.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:300px;right:30px;cursor: pointer;">
+<a title="返回顶部"><img src="/imgs/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','331116ob5_5qXeu59nXN','2.0.0');
+</script>
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+

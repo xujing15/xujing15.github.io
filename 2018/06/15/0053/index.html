@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reverse()</title>
+    <style type="text/css">
+        body {
+            margin: 200px;
+        }
+        p {
+            font-size:50px;
+            color: #ff34ef;
+            text-align: center;
+        }
+        button {
+            font-size:30px;
+            color: #48beff;
+            margin-left: 320px;
+        }
+        img {
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<p id="content">无敌reverse()</p>
+<button onclick="myfunction()">快来点我！</button>
+<img src="021.png"/>
+<script type="text/javascript">
+    var a = ["Web", "Html5", "Web", "Css3", "Python", "吹水"];
+
+    function myfunction() {
+        a.reverse();
+        var b = document.getElementById("content");
+        b.innerHTML = a;
+    }
+</script>
+</body>
+</html>

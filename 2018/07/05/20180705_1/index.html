@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="http://tajs.qq.com/stats?sId=" charset="UTF-8"></script>
+  <script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+  
+  <title>第五天(1) | XuJ</title>
+  <meta name="author" content="xujing">
+  
+  <meta name="description" content="续深入浅出SQL中文版(Head First SQL)2018年7月5日 周四 晴">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="第五天(1)"/>
+  <meta property="og:site_name" content="XuJ"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/imgs/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="XuJ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header><div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/imgs/logo.png" alt="XuJ" title="XuJ"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name">XuJ</h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li> <a href="/atom.xml">RSS</a> </li>
+				</ul>
+			</nav>			
+</div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header class="article-info clearfix">
+  <h1 itemprop="name">
+	第五天(1)
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://xujing15.github.io" title="xujing">xujing</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2018-07-05T15:59:58.000Z" itemprop="datePublished">2018-07-05</time>
+    更新日期:<time datetime="2018-07-07T01:37:56.511Z" itemprop="dateModified">2018-07-07</time>
+    
+  </p>
+</header>
+    <div class="entry">
+		
+                
+        <p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年7月5日 周四 晴<br><a id="more"></a></p>
+<p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p>
+<p></p><h2>第十章 外连接、自联接与联合</h2><p></p>
+<ul><br><li>外联接 outer join<br>    外联接返回某张表的所有行，并带有来自另一张表的条件相符的行<br>    外联接比我们学过的所有联接更加注重两张表之间的关系<br><br>    LEFT OUTER JOIN（左外联接）会匹配左表中的每一行及右表中符合条件的行<br></li><br><li>内联接和外联接的差别：<br>    外联接一定会提供数据行，无论该行能否在另一个表中找到相匹配的行<br><br>    左外联接的结果集中的NULL表示右表中没有找到与左表相符的记录<br></li><br><li>右外联接   右外联接会根据左表评估右表<br><br>    固定使用某一种联接的习惯更好<br></li><br><li>自引用外键self-referencing foreign key<br>    自引用 表示它是引用同一张表内另一列的键<br>    自联接 sel-join 模拟联接两张表的效果<br>    <code>SELECT c1.name,c2.name AS boss
+    FROM clown_info c1
+    INNER JOIN clow_info c2
+    ON c1.boss_id=c2.id;</code><br><br>    自联接能把单一表当成两张具有完全相同的信息的表来进行查询<br></li><br><li>另一种取得多张表的查询结果的方式：UNION 联合<br>    UNION根据我们在SELECT中指定的列，把两张或更多张表的查询结果合并至一个表中。可以把UNION的查询结果想成“重叠了”每个SELECT的查询结果<br>    <code>SELECT title FROM job_current
+    UNION
+    SELECT title FROM job_desired
+    UNION
+    SELECT title FROM job_listings;</code><br></li><br><li>UNION只能接受一个ORDER BY且必须位于语句末端<br>    每个SELECT语句中列的数量必须一致。不可以由第一条语句选取了两列，由其他语句却只选取一列<br>    SELECT语句的顺序不重要，不会改变结果<br>    SQL默认会清除联合的结果中的重复值<br>    列的数据类型必须相同或者可以相互转换<br>    如果出于某些原因而需要看到重复数据，可以使用UNION ALL运算符。这个运算符返回每个相符的记录，而不只是没有重复的记录<br></li><br><li>用联合的结果创建表<br>    CREATE TABLE AS 接收来自SELECT查询的结果并把结果制作成一张表<br>    <code>CREATE TABLE my_union AS
+    SELECT title FROM job_current UNION
+    SELECT title FROM job_desired UNION
+    SELECT title FROM job_listings;</code><br></li><br><li>MySQL中没有<br>    INTERSECT/EXCEPT   交集/差集<br></li><br><li>把子查询转换为联接<br>    <code>SELECT mc.first_name,mc.last_name,mc.phone,jc.title
+    FROM job_current AS jc NATURAL JOIN my_contacts AS mc
+    INNER JOIN job_listings jl
+    ON jc.title = jl.title;</code><br></li><br><li>把自联接转换为子查询<br>    <code>SELECT c1.name,
+    (SELECT name FROM clown_info
+    WHERE c1.boss_id = id) AS boss
+    FROM clown_info c1;</code><br></li><br></ul>
+    </div>
+    <footer>
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/sql/">sql</a>
+  </div>
+
+		<div class="bdsharebuttonbox">
+	<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+	<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+	<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+	<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="bds_more" data-cmd="more"></a>
+	<a href="#" class="bds_count" data-cmd="count"></a>
+</div>
+<script>
+window._bd_share_config=
+{
+	"common":{
+		"bdSnsKey":{},
+		"bdText":"",
+		"bdMini":"2",
+		"bdMiniList":false,
+		"bdPic":"",
+		"bdStyle":"0",
+		"bdSize":"24"
+	},
+	"share":{},
+	"image":{
+		"viewList":["qzone","tsina","tqq","renren","weixin","fbook","twi"],
+		"viewText":"分享到：",
+		"viewSize":"24"
+	},
+	"selectShare":{
+		"bdContainerClass":null,
+		"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","fbook","twi"]
+	}
+};
+with(document)0[
+	(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)
+];
+</script>    
+        <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+ <nav id="pagination" >
+    
+    <a href="/2018/07/10/20180710_1/" class="alignleft prev" title="第六天(1)">第六天(1)</a>
+    
+    
+    <a href="/2018/06/30/20180630_1/" class="alignright next" title="第四天(1)">第四天(1)</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//baidu.com/baidu" method="get" accept-charset="utf-8">
+    <input type="search" name="word" results="0" placeholder="搜索">
+    <input type="hidden" name="si" value="xujing15.github.io">
+    <input name=tn type=hidden value="bds">
+	<input name=cl type=hidden value="3">
+	<input name=ct type=hidden value="2097152">
+	<input name=s type=hidden value="on">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/github/">github</a><small>1</small></li>
+  
+    <li><a href="/categories/grafting-through/">grafting through</a><small>1</small></li>
+  
+    <li><a href="/categories/hexo/">hexo</a><small>5</small></li>
+  
+    <li><a href="/categories/markdown/">markdown</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/github/" style="font-size: 12.5px;">github</a> <a href="/tags/grafting-through/" style="font-size: 10px;">grafting through</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/html，css/" style="font-size: 10px;">html，css</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/sql/" style="font-size: 17.5px;">sql</a> <a href="/tags/工作/" style="font-size: 10px;">工作</a> <a href="/tags/搭建博客/" style="font-size: 15px;">搭建博客</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日记/" style="font-size: 20px;">日记</a> <a href="/tags/黑客/" style="font-size: 10px;">黑客</a>
+  </div>
+</div>
+
+
+  <iframe width="100%" height="140" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1923610190&verifier=6af5ad6a&colors=fafafa,fafafa,666666,0082cb,ecfbfd&dpc=1"></iframe>
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>本体：许菁</li>
+<li>外文：cindy</li>
+<li>现状：读研ing</li>
+<li>QQ  ：386785107</li>
+<li>邮箱：xujing8231@gmail.com</li>
+</ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hi,I&#39;m new here. <br/>
+			I made a few changes.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/6036063647" target="_blank" title="weibo"></a>
+		
+		
+        
+        <a href="https://github.com/xujing15" target="_blank" title="github"></a>
+        
+        
+        <a href="https://zhihu.com/people/xu-jing-77-59-54" target="_blank" title="zhihu"></a>
+        
+        
+        <a href="mailto:xujing8231@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+        
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/huangjunhui/concise" target="_blank" title="Concise">Concise</a> © 2018 
+		
+		<a href="http://xujing15.github.io/about" target="_blank" title="xujing">xujing</a>
+		
+		</p>
+</div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/counter.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="totop" style="position:fixed;bottom:300px;right:30px;cursor: pointer;">
+<a title="返回顶部"><img src="/imgs/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','331116ob5_5qXeu59nXN','2.0.0');
+</script>
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+

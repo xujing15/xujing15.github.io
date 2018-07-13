@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xujing15.github.io/"/>
-  <updated>2018-06-17T01:43:06.296Z</updated>
+  <updated>2018-07-13T02:17:41.665Z</updated>
   <id>http://xujing15.github.io/</id>
   
   <author>
@@ -17,22 +17,242 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>一曝十寒之第九寒(1)</title>
-    <link href="http://xujing15.github.io/2018/06/15/20180615_1/"/>
-    <id>http://xujing15.github.io/2018/06/15/20180615_1/</id>
-    <published>2018-06-15T15:59:58.000Z</published>
-    <updated>2018-06-17T01:43:06.296Z</updated>
+    <title>第八天(2)</title>
+    <link href="http://xujing15.github.io/2018/07/12/20180712_2/"/>
+    <id>http://xujing15.github.io/2018/07/12/20180712_2/</id>
+    <published>2018-07-12T15:59:58.000Z</published>
+    <updated>2018-07-13T02:17:41.665Z</updated>
     
-    <content type="html"><![CDATA[<p>2018年6月15日 周五 晴<br><a id="more"></a></p><p><a href="https://xujing15.github.io/2018/06/15/0034/">https://xujing15.github.io/2018/06/15/0034/</a></p>]]></content>
+    <content type="html"><![CDATA[<p>郝斌SqlServer2005视频<br><a id="more"></a></p><p></p><h1>郝斌SqlServer2005视频</h1><p></p><p></p><h2>36.详述多对多关系及其实现【重点】</h2><p></p><ul><br><li>多对多<br>        多对多必须得通过单独的一张表来表示<br>        班级 和 教师<br>        班级是一张表，教师是一张表，班级和教师的关系也是一张表<br></li><br><li>表名一般是单数</li><br><hr><br><h2>37.SqlServer2005数据关系图的使用和闲聊</h2><br><ul><br><li>见pdf：MySQLWorkbench使用-导出数据表关系图<br>    <a href="https://xujing15.github.io2018/07/12/20180712_2/MySQLWorkbench导出数据表关系图.pdf" target="_blank" rel="external">https://xujing15.github.io2018/07/12/20180712_2/MySQLWorkbench导出数据表关系图.pdf</a><br></li></ul><br><hr><br><h2>38.复习前面四节课的内容</h2><br><ul><br><li></li><br></ul></ul>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;2018年6月15日 周五 晴&lt;br&gt;
+      &lt;p&gt;郝斌SqlServer2005视频&lt;br&gt;
     
     </summary>
     
     
-      <category term="javasript" scheme="http://xujing15.github.io/tags/javasript/"/>
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第八天(1)</title>
+    <link href="http://xujing15.github.io/2018/07/12/20180712_1/"/>
+    <id>http://xujing15.github.io/2018/07/12/20180712_1/</id>
+    <published>2018-07-12T15:59:58.000Z</published>
+    <updated>2018-07-12T06:28:25.223Z</updated>
+    
+    <content type="html"><![CDATA[<p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年7月12日 周四 雨<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>附录</h2><p></p><ul><br><li>有三个关键字在子查询中非常好用：ANY、ALL与SOME，它们可以与比较运算符和结果集一起使用<br>    <code>SELECT name,rating FROM restaurant_ratings    WHERE rating &gt; ALL    (SELECT rating FROM restaurant_ratings    WHERE rating &gt; 3 AND rating &lt; 9);</code><br>    大于加上ALL可以找出任何大于集合中最大值的值<br>    <code>SELECT name,rating FROM restaurant_ratings    WHERE rating &lt; ALL    (SELECT rating FROM restaurant_ratings    WHERE rating &gt; 3 AND rating &lt; 9);</code><br>    小于加上ALL可以找出任何小于集合中最小值的值<br><br>    <code>SELECT name,rating FROM restaurant_ratings    WHERE rating &gt; ANY    (SELECT rating FROM restaurant_ratings    WHERE rating &gt; 3 AND rating &lt; 9);</code><br>    大于加上ANY可以找出任何大于集合中最小值的值<br>    小于加上ANY可以找出任何小于集合中最大值的值<br><br>    标准SQL语法中，SOME与ANY表示相同的意思，在M有SQL中也是这样<br></li><br><li>INT(SIGNED)在创建列时告诉RDBMS该采用有符号整数<br>    <code>SELECT DATE_FORMAT(a_date,&#39;%M %Y&#39;) FROM some_dates;</code><br></li><br><li>创建临时表<br>    <code>CREATE TEMPORARY TABLE my_temp_table     (        some_id INT,        some_data VARCHAR(50)    );</code><br>    <code>CREATE TEMPORARY TABLE my_temp_table AS    SELECT * FROM my_permanent_table;</code><br></li><br><li>转换数据类型<br>    <code>CAST(your_column,TYPE);</code><br>    <code>SELECT CAST(&#39;2005-01-01&#39; AS DATE);</code><br>    <code>SELECT CAST(2 AS DECIMAL);</code><br><br>    从浮点数转换为整数<br>    从TIME,DATE,DATETIME,CHAR转换为DECIMAL或INTEGER不能使用CASE()<br></li><br><li>确认当前使用的账号：<br>    <code>SELECT CURRENT_USER;</code><br>    取得当前的日期与时间<br>    <code>SELECT CURRENT_DATE;</code><br>    <code>SELECT CURRENT_TIME;</code><br></li><br><li>索引能加快速度<br>    <code>ALTER TABLE my_contacts    ADD INDEX(last_name);</code><br>    取得当前的日期与时间<br>    <code>SELECT CURRENT_DATE;</code><br>    <code>SELECT CURRENT_TIME;</code><br></li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;续&lt;br&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;2018年7月12日 周四 雨&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第七天(1)</title>
+    <link href="http://xujing15.github.io/2018/07/11/20180711_1/"/>
+    <id>http://xujing15.github.io/2018/07/11/20180711_1/</id>
+    <published>2018-07-11T15:59:58.000Z</published>
+    <updated>2018-07-12T03:38:16.629Z</updated>
+    
+    <content type="html"><![CDATA[<p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年7月11日 周三 晴<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>第十二章 安全性</h2><p></p><ul><br><li>MySQL设定根用户密码：<br>    <code>SET PASSWORD FOR &#39;root&#39;@&#39;localhost&#39; = PASSWORD(&#39;b4dc10wnZ&#39;);</code><br></li><br><li>SQL也以数据库存储它本身的数据，包括用户id、用户名称与密码以及各个用户对特定数据库的操作权限<br>    <code>CREATE USER elsie    IDENTIFIED BY &#39;cl3v3rp4s5w0rd&#39;;</code><br></li><br><li>新用户不能对数据库中的任何对象执行任何SQL命令，刚刚创建的新用户没有任何权限<br>    GRANT语句可以为用户授予操作数据库的特权<br>    使用GRANT语句可以控制用户对表和列可执行的操作<br>    GRANT的作用：<br>    1）仅允许部分用户修改特定表<br>    2）特定表的数据仅允许部分用户访问<br>    3）就算在表中，也可能需要权限：部分用户可看到特定列，但其他人不行<br><br>    <code>GRANT SELECT ON    clown_info    TO elsie;</code><br><br>    GRANT的使用：<br>    1）可用同一个GRANT语句为多位用户设定权限<br>    <code>GRANT DELETE ON chores    TO haapy,sleepy;</code><br>    2)WITH GRANT OPTION让用户能把刚刚获得的权限授予其他用户<br>    <code>GRANT DELETE ON chores    TO happy,sleepy    WITH GRANT OPTION;</code><br>    3）指定用户可于某个表中使用的列，而不是允许用户操作整张表<br>    <code>GRANT SELETE(chore_name) ON     chores TO dopey;</code><br>    4）一段语句可对表指定超过一种权限<br>    <code>GRANT SELECT,INSERT ON     talking_animals     TO sneezy;</code><br>    5)GRANT ALL把SELECT,UPDATE,INSERT,DELETE指定表内容的权限都授予用户了<br>    <code>GRANT ALL ON talking_animals    TO bashful;</code><br>    6）使用database_name.<em>可把权限范围运用到数据库中的每张表上<br>    <code>GRANT SELETE ON woodland_cottage TO doc;</code><br></em></li><br><li>撤销权限：REVOKE<br>    <code>REVOKE SELECT ON    clown_info    FROM elsie;</code><br><br>    <code>REVOKE GRANT OPTION ON     DELETE ON chores     FROM happy,sleepy;</code><br></li><br><li>有两种方式既可以撤销权限，又可以确保不影响目标以外的用户<br>    可以使用关键字CASCASE与RESTRICT来更精确地锁定目标用户，决定谁会失去特权，谁能保持特权<br>    <code>REVOKE DELETE ON chores FROM sleepy CASCADE;</code><br>    CASCADE表示权限的撤销具有连锁反应，包括目标在内的被授权人的权限都会被撤销<br>    <code>REVOKE DELETE ON chores FROM sleepy RESTRICT;</code><br>    若是被撤销权限的目标用户已把权限授予他人，使用RESTRICT会返回错误信息<br></li><br><li>注意：几乎所有针对列的权限都没有用（除非在那张表中只有GRANT指定的列必须有内容   INSERT时），除非是GRANT语句中与SELECT有关的权限<br><br>    ``GRANT SELECT ON .*<br>    TO elsie;<code>第一个星号代表所有数据库，第二个星号表示所有表&lt;/li&gt;&lt;li&gt;MySQL没有角色功能    角色即一组权限</code>CREATE ROLE data_entry;<code>``GRANT SELECT,INSERT ON some_table TO data_entry;</code><br>    <code>GRANT data_entry TO doc;</code><br>    角色名称替换了表名与权限<br><br>    <code>DROP ROLE data_entry;</code>卸除角色<br>    <code>REVOKE data_entry FROM doc;</code>撤销角色<br></li><br><li><code>GRANT data_entry TO doc WITH ADMIN OPTION;</code><br>    WITH ADMIN OPTION允许用户doc把角色data_entry授予其他人<br><br>    <code>REVOKE data_entry FROM doc CASCADE;</code><br>    <code>REVOKE data_entry FROM doc RESTRICT;</code><br></li><br><li>结合CREATE USER与GRANT：<br>    GRANT SELECT ON<br>    clown_info<br>    TO elsie<br>    IDENTIFIED BY ‘cl3v3rp4s5w0rd’;<br></li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;续&lt;br&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;2018年7月11日 周三 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第六天(1)</title>
+    <link href="http://xujing15.github.io/2018/07/10/20180710_1/"/>
+    <id>http://xujing15.github.io/2018/07/10/20180710_1/</id>
+    <published>2018-07-10T15:59:58.000Z</published>
+    <updated>2018-07-11T13:38:16.609Z</updated>
+    
+    <content type="html"><![CDATA[<p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年7月10日 周二 晴<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>第十一章 约束、视图与事务</h2><p></p><ul><br><li>有AUTO_INCREMENT列时不需要放入数据值。两个单引号要求表为我们插入主键列的值</li><br><li>约束（constraint）限定了可以插入列的内容，而我们创建表时就要加入约束<br>    学习过的约束：NOT NULL,PRIMARY KEY,FOREIGN KEY,UNIQUE<br><br>    CHECK检查 约束限定允许插入某个列的值。它与WHERE子句都使用相同的条件表达式<br>    <code>CREATE TABLE piggy_bank    (        id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,        coin CHAR(1) CHECK (coin IN (&#39;P&#39;,&#39;N&#39;,&#39;D&#39;,&#39;Q&#39;))    );</code><br>    在MySQL中，无法以CHECK强化数据完整性<br><br>    为性别列设定检查约束<br>    <code>ALTER TABLE my_contacts    ADD CONSTRAINT CHECK gender IN (&#39;M&#39;,&#39;F&#39;);</code><br></li><br><li>创建视图   视图适合简化复杂查询<br>   <code>CREATE VIEW web_designers AS    SELECT mc.first_name,mc.last_name,mc.phone,mc.email    FROM my_contacts mc    NATURAL JOIN job_desired jd    WHERE jd.title = &#39;Web Designer&#39;;</code><br>    也可以改用<br>    <code>CREATE VIEW web_designers AS    SELECT mc.first_name,mc.last_name,mc.phone,mc.email    FROM my_contacts mc    INNER JOIN job_desired jd    ON mc.contact_id = jd.contact_id;</code><br><br>    <code>CREATE VIEW tech_writer_jobs AS    SELECT title,salary,description,zip    FROM job_listings    WHERE title = &#39;Technical Writer&#39;;</code><br></li><br><li>在SELECT语句中使用视图<br>    <code>SELECT * FROM web_designers;</code><br><br>    FROM子句需要表<br>    当SELECT语句的结果是一个虚拟表时，若没有别名，SQL就无法取得其中的表<br></li><br><li>基本上视图是一个只有在查询中使用VIEW时才存在的表。它被视为虚拟表 virtual table，因为其行为和表一样，也能执行表可用的操作。<br><br>    视图也可以和INSERT,UPDATE和DELETE搭配使用<br></li><br><li>带有CHECK OPTION的视图<br>    CHECK OPTION检查每个进行INSERT或DELETE的查询，它根据视图中的WHERE子句来判断这些查询可否执行<br><br>    使用MySQL时，可用CHECK OPTION模仿CHECK CONSTRAINT的功能<br>    当数据库的使用者不只一人时，CHECK CONSTRAINT与视图均有助于维护控制权<br></li><br><li>可更新视图包括引用表里所有为NOT NULL的列<br><br>    DROP VIEW清理空间<br>    <code>DROP VIEW pb_dimes;</code><br></li><br><li>事务 transaction是一群可完成一组工作的SQL语句<br>    在事务过程中，如果所有步骤无法不受干扰地完成，则不该完成任何单一步骤<br>    一组必须同进退的查询。如果这些查询无法不受干扰地全部执行完毕，则不承认其中的部分查询造成的改变<br><br>    经典ACID 检测<br>    A：ATOMICITY原子性<br>       事务里的每一个步骤都必须完成，否则只能都不完成<br>    C：CONSISTENCY一致性<br>       事务完成后应该维持数据库的一致性<br>    I：ISOLATION隔离性<br>       表示每次事务都会看到具有一致性的数据库，无论其他事务有什么行动<br>    D：DURABILITY持久性<br>       事务完成后，数据库需要正确地存储数据并保护数据免受断电或其他威胁的伤害<br></li><br><li>有三种SQL事务工具可以保障账户的安全：<br>    START TRANSACTION;<br>    持续追踪后续所有SQL语句，直到输入COMMIT或ROLLBACK为止<br>    COMMIT;<br>    等到我们满意后再提交（COMMIT）所有程序代码造成的改变<br>    ROLLBACK;<br>    回滚，回到事务开始前的状态<br><br>    在COMMIT之前数据库不会发生任何改变<br></li><br><li>必须用START TRANSACTION告诉RDBMS“事务开始”，才能追踪事务开始的地方并知道恢复的程度<br>    使用START TRANSACTION来测试查询<br></li><br><li>存储引擎必须是BDB或InnoDB，两种支持事务的引擎之一<br>    BDB与InnoDB是两种RDBMS在幕后存储数据的可能方式<br>    这些就是存储引擎，使用其中一种可确保事务能够使用<br><br>    改变存储引擎的语法：<br>    ALTER TABLE your_table TYPE = InnoDB;<br></li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;续&lt;br&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;2018年7月10日 周二 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第五天(1)</title>
+    <link href="http://xujing15.github.io/2018/07/05/20180705_1/"/>
+    <id>http://xujing15.github.io/2018/07/05/20180705_1/</id>
+    <published>2018-07-05T15:59:58.000Z</published>
+    <updated>2018-07-07T01:37:56.511Z</updated>
+    
+    <content type="html"><![CDATA[<p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年7月5日 周四 晴<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>第十章 外连接、自联接与联合</h2><p></p><ul><br><li>外联接 outer join<br>    外联接返回某张表的所有行，并带有来自另一张表的条件相符的行<br>    外联接比我们学过的所有联接更加注重两张表之间的关系<br><br>    LEFT OUTER JOIN（左外联接）会匹配左表中的每一行及右表中符合条件的行<br></li><br><li>内联接和外联接的差别：<br>    外联接一定会提供数据行，无论该行能否在另一个表中找到相匹配的行<br><br>    左外联接的结果集中的NULL表示右表中没有找到与左表相符的记录<br></li><br><li>右外联接   右外联接会根据左表评估右表<br><br>    固定使用某一种联接的习惯更好<br></li><br><li>自引用外键self-referencing foreign key<br>    自引用 表示它是引用同一张表内另一列的键<br>    自联接 sel-join 模拟联接两张表的效果<br>    <code>SELECT c1.name,c2.name AS boss    FROM clown_info c1    INNER JOIN clow_info c2    ON c1.boss_id=c2.id;</code><br><br>    自联接能把单一表当成两张具有完全相同的信息的表来进行查询<br></li><br><li>另一种取得多张表的查询结果的方式：UNION 联合<br>    UNION根据我们在SELECT中指定的列，把两张或更多张表的查询结果合并至一个表中。可以把UNION的查询结果想成“重叠了”每个SELECT的查询结果<br>    <code>SELECT title FROM job_current    UNION    SELECT title FROM job_desired    UNION    SELECT title FROM job_listings;</code><br></li><br><li>UNION只能接受一个ORDER BY且必须位于语句末端<br>    每个SELECT语句中列的数量必须一致。不可以由第一条语句选取了两列，由其他语句却只选取一列<br>    SELECT语句的顺序不重要，不会改变结果<br>    SQL默认会清除联合的结果中的重复值<br>    列的数据类型必须相同或者可以相互转换<br>    如果出于某些原因而需要看到重复数据，可以使用UNION ALL运算符。这个运算符返回每个相符的记录，而不只是没有重复的记录<br></li><br><li>用联合的结果创建表<br>    CREATE TABLE AS 接收来自SELECT查询的结果并把结果制作成一张表<br>    <code>CREATE TABLE my_union AS    SELECT title FROM job_current UNION    SELECT title FROM job_desired UNION    SELECT title FROM job_listings;</code><br></li><br><li>MySQL中没有<br>    INTERSECT/EXCEPT   交集/差集<br></li><br><li>把子查询转换为联接<br>    <code>SELECT mc.first_name,mc.last_name,mc.phone,jc.title    FROM job_current AS jc NATURAL JOIN my_contacts AS mc    INNER JOIN job_listings jl    ON jc.title = jl.title;</code><br></li><br><li>把自联接转换为子查询<br>    <code>SELECT c1.name,    (SELECT name FROM clown_info    WHERE c1.boss_id = id) AS boss    FROM clown_info c1;</code><br></li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;续&lt;br&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;2018年7月5日 周四 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第四天(1)</title>
+    <link href="http://xujing15.github.io/2018/06/30/20180630_1/"/>
+    <id>http://xujing15.github.io/2018/06/30/20180630_1/</id>
+    <published>2018-06-30T15:59:58.000Z</published>
+    <updated>2018-07-05T00:24:38.867Z</updated>
+    
+    <content type="html"><![CDATA[<p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年6月29日 周六 晴<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>第九章 子查询</h2><p></p><ul><br><li>子查询 subquery<br>    是被另一个查询包围的查询，也可称为内层查询 INNER query<br>    外层查询 OUTER query/包含查询 containing query<br>    外层查询+内层查询=以子查询进行查询   两个查询结合而成的一个查询就是包含子查询的查询<br>    <code>SELECT mc.first_name,mc_last_name,mc_phone,jc.title    FROM job_current AS jc NATURAL JOIN my_contacts AS mc    WHERE jc.title IN (SELECT title FROM job_listings);</code><br></li><br><li>下面两个查询等价，一个是子查询，一个是联接<br>    <code>SELECT last_name,first_name    FROM my_contacts    WHERE zip_code = (SELECT zip_code FROM zip_code WHERE city = &#39;Memphis&#39; AND state = &#39;TN&#39;);</code><br><br>    <code>SELECT last_name,first_name    FROM my_contacts mc     NATURAL JOIN zip_code zc    WHERE zc.city = &#39;Memphis&#39;    AND zc.state = &#39;TN&#39;;</code><br></li><br><li>一般而言，子查询必须返回一个值。使用IN是例外情况。大部分时候，子查询只需要返回单一值。</li><br><li>子查询选取列<br>    <code>SELECT mc.first_name,mc.last_name,    (SELECT state    FROM zip_code    WHERE mc.zip_code = zip_code) AS state    FROM my_contacts mc;</code><br></li><br><li>如果子查询可以独立运行且不会引用外层查询的任何结果，即称为非关联子查询（noncorrelated subquery）。先处理内层查询，查询结果再用于外层查询的WHERE子句。<br></li><br><li>交叉联接和关联子查询查询速度慢<br>    联接比子查询查询速度快<br></li><br><li><code>SELECT mc.first_name,mc.last_name,jc.salary,    jc.salary - (SELECT AVG(salary) FROM job_current WHERE title = &#39;Web Developer&#39;)     FROM my_contacts mc NATURAL JOIN job_current jc    WHERE jc.title = &#39;Web Developer&#39;);</code><br>    输出的最后一列是薪资-平均薪资<br></li><br><li>有多个值的非关联子查询：IN,NOT IN<br>    IN或NOT IN在其中根据子查询的结果检查外层查询，比较两者是否相符（或不相符）<br>    非关联子查询使用IN或NOT IN来检查子查询返回的值是否为集合的成员之一（或不是集合的成员之一）<br></li><br><li>关联子查询<br>    关联名称（别名）<br>    <code>SELECT mc.first_name,mc.last_name,     FROM my_contacts AS mc    WHERE    3 = (    SELECT COUNT(*) FROM contact_interest    WHERE contact_id = mc.contact_id    );</code><br></li><br><li>NOT EXISTS   如果没有找到指定的内容，视为条件成立<br>    EXISTS<br>    <code>SELECT mc.first_name first_name,mc.last_name last_name,mc.email email,     FROM my_contacts AS mc    WHERE NOT EXISTS    (SELECT * FROM job_current jc    WHERE mc.contact_id = jc.contact_id);</code><br></li><br><li>子查询可以放在子查询中，嵌套查询</li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;续&lt;br&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;2018年6月29日 周六 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第三天(1)</title>
+    <link href="http://xujing15.github.io/2018/06/29/20180629_1/"/>
+    <id>http://xujing15.github.io/2018/06/29/20180629_1/</id>
+    <published>2018-06-29T15:59:58.000Z</published>
+    <updated>2018-06-30T15:00:48.271Z</updated>
+    
+    <content type="html"><![CDATA[<p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年6月29日 周五 晴<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>第八章 联接与多张表的操作</h2><p></p><ul><br><li><code>UPDATE my_contacts     SET interests =     SUBSTR(interests,LENGTH(interest1) + 2);</code><br><br>    2是逗号和空格<br>    SUBSTR返回本列内原始字符串的一部分。它接受字符串并切除我们用括号指定的第一部分，然后返回剩下的部分<br></li><br><li>首先CREATE TABLE,然后利用SELECT进行INSERT<br>    <code>CREATE TABLE profession    (        id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,        profesion VARCHAR(20)    );    INSERT INTO profession (profession)       SELECT profession FROM my_contacts       GROUP BY profession       ORDER BY profession;</code><br>    注意(profession)这块   空表填内容<br></li><br><li>利用SELECT进行CREATE TABLE,然后ALTER以添加主键<br>    <code>CREATE TABLE profession AS       SELECT profession FROM my_contacts       GROUP BY profession       ORDER BY profession;    ALTER TABLE profession       ADD COLUMN id INT NOT NULL AUTO_INCREMENT FIRST,       ADD PRIMARY KEY(id);</code><br>    注意AS   有内容表，修改主键<br></li><br><li>同时CREATE、SELECT、INSERT<br>    CREATE TABLE的同时设置主键并利用SELECT填入数据<br>    <code>CREATE TABLE profession    (        id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,        profesion VARCHAR(20)    ) AS       SELECT profession FROM my_contacts       GROUP BY profession       ORDER BY profession;</code><br>    注意AS   空表填同时内容<br></li><br><li>列别名<br>    创建别名：在查询中首次使用原始列名的地方后接AS并设定要采用的别名。<br>    <code>CREATE TABLE profession    (        id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,        profesion VARCHAR(20)    ) AS       SELECT profession AS mc_prof FROM my_contacts       GROUP BY mc_prof       ORDER BY mc_prof;</code><br>    如这里的AS mc_prof<br></li><br><li>表别名，又称为correlation name（相关名称）<br>    创建表别名：在查询中首次出现表名的地方后接AS并设定别名。<br>    <code>SELECT profession AS mc_prof    FROM my_contacts AS mc    GROUP BY mc_prof    ORDER BY mc_prof;</code><br><br>    设定别名可以省略AS<br>    <code>SELECT profession mc_prof    FROM my_contacts mc    GROUP BY mc_prof    ORDER BY mc_prof;</code><br></li><br><li>联接<br>    交叉联接：<br>    <code>SELECT t.toy,b.boy    FROM toys AS t        CROSS JOIN        boys AS b;</code><br>    点号前是表名，点号后是表内的列名，这里以别名代替表的全名<br>    CROSS JOIN返回两张表的每一行相乘的结果<br><br>    CROSS JOIN可以省略不写，只用逗号代替（COMMA JOIN）<br>    <code>SELECT toys.toy,boys.boy    FROM toys,boys;</code><br><br>    交叉联接是内联接的一种。<br>    内联接基本上就是通过查询中的条件移除了某些结果数据行后的交叉联接<br></li><br><li>内联接   INNER JOIN<br>    利用条件判断中的比较运算符结合两张表的记录，只有联接记录符合条件时才会返回列<br>    <code>SELECT somecoulumns    FROM table1        INNER JOIN        table2    ON somecondition;</code><br>    ON这里也可以使用关键字WHERE   这里省略了指定别名的部分<br>    条件式里可采用任何一个比较运算符<br></li><br><li>内联接-相等联接（equijoin）   测试相等性的内联接<br>    <code>SELECT boys.boy,toys.toy    FROM boys        INNER JOIN        toys    ON boys.toy_id = toys.toy_id;</code><br></li><br><li>内联接-不等联接（non-equijoin）   测试不相等性的内联接<br>    不等联接则返回任何不相等的记录<br>    <code>SELECT boys.boy,toys.toy    FROM boys        INNER JOIN        toys    ON boys.toy_id &lt;&gt; toys.toy_id    ORDER BY boys.boy;</code><br></li><br><li>内联接-自然联接（natural join）   利用相同列名的内联接<br>    自然联接只有在联接的列在两张表中的名称都相同时才会有用,不使用ON子句的内联接<br>    <code>SELECT boys.boy,toys.toy    FROM boys        NATURAL JOIN        toys;</code><br></li><br><li>Foreign key   外键<br>    外键是表中的某一列，它引用到另一个表的主键<br>    外键使用的主键被称为父键，主键所在的表称为父表<br>    外键能用于确认一张表中的行与另一张表中的行相对应<br>    外键的值可以是NULL<br>    外键值不需要唯一，通常，外键都没有唯一性<br></li><br><li>创建在结构内的键被称为约束（constraint）<br>    插入外键列的值必须已经存在于父表的来源列中，这是引用完整性（referential integrity）<br>    创建外键作为表的约束提供了明确的优势，如果违反了规则，约束会阻止我们破坏表<br></li><br><li>创建带有外键的表<br>    <code>CREATE TABLE interests (    int_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,    interest VARCHAR(50) NOT NULL,    contact_id INT NOT NULL,    CONSTRAINT my_contacts_contact_id_fk    FOREIGN KEY (contact_id)    REFERENCES my_contacts (contact_id)    );</code><br>    另一种指定主键的方式，在同一行代码中加入PRIMARY KEY命令<br>    创建外键和创建索引列一样的设定<br>    CONSTRAINT 键的来源表<strong>键的名称</strong>说明是外键<br></li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;续&lt;br&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;2018年6月29日 周五 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第二天(1)</title>
+    <link href="http://xujing15.github.io/2018/06/26/20180626_1/"/>
+    <id>http://xujing15.github.io/2018/06/26/20180626_1/</id>
+    <published>2018-06-26T15:59:58.000Z</published>
+    <updated>2018-06-29T03:47:28.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>续<br>深入浅出SQL中文版(Head First SQL)<br>2018年6月26日 周二 晴<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>第六章 SELECT进阶</h2><p></p><ul><br><li><code>UPDATE my_table    SET new_column =     CASE        WHEN column1 = somevalue1            THEN newvalue1        WHEN column2 = somevalue2            THEN newvalue2        ELES newvalue3    END (WHERE...);</code><br><br>    CASE表达式可以搭配SELECT,INSERT,DELETE,UPDATE关键字<br></li><br><li>ORDER BY   根据指定的列，按字母顺序排列查询结果<br>    <code>SELECT title,category    FROM movie_table    WHERE    (title LIKE &#39;A%&#39;    AND)    category = &#39;family&#39;    ORDER BY title;</code><br><br>    <code>SELECT title,category,purchased    FROM movie_table    ORDER BY category(ASC),purchased DESC;</code><br>    先按照category列排列，在按照purchased列排列<br>    对于作为排序依据的列，你可以依需求尽量多的使用。<br><br>    反转顺序的关键字：DESC（降序：descending），位于ORDER BY子句中的列名后<br>    ASC 默认的排序方式<br></li><br><li>SUM   加总指定列的列值，求总和<br>    <code>SELECT SUM(sales)    FROM cookie_sales    WHERE first_name = &#39;Nicole&#39;;</code><br><br>    <code>SELECT first_name,SUM(sales)    FROM cookie_sales    GROUP BY first_name    ORDER BY SUM(sales) DESC;</code><br></li><br><li>GROUP BY   根据相同的列值，把记录分成多个组</li><br><li>AVG   求平均值<br>    <code>SELECT first_name,AVG(sales)    FROM cookie_sales    GROUP BY first_name    ORDER BY AVG(sales) DESC;</code><br></li><br><li>MAX/MIN   返回列中的最大值（最小值）<br>    <code>SELECT first_name,MAX(sales)    FROM cookie_sales    GROUP BY first_name    ORDER BY MAX(sales) DESC;</code><br><br>    <code>SELECT first_name,MIN(sales)    FROM cookie_sales    GROUP BY first_name    ORDER BY MIN(sales) DESC;</code><br></li><br><li>COUNT   只返回一个整数值（多少条记录符合SELECT的查询）<br>    <code>SELECT first_name,COUNT(sales)    FROM cookie_sales    GROUP BY first_name    ORDER BY COUNT(sales) DESC;</code><br></li><br><li>DISTINCT   不同的列值只会返回一次，返回结果的值是唯一的，是关键字<br>    <code>SELECT DISTINCT sale_date    FROM cookie_sales    ORDER BY sale_date;</code><br><br>    DISTINCT和COUNT函数搭配使用：<br>    <code>SELECT COUNT(DISTINCT sale_date)    FROM cookie_sales;</code><br></li><br><li>LIMIT   指定返回的记录的数量，以及从哪条记录开始返回、返回几条记录<br>    <code>SELECT first_name,SUM(sales)    FROM cookie_sales    GROUP BY first_name    ORDER BY SUM(sales) DESC    LIMIT 2;</code><br>    指定呈现的结果为两行<br><br>    <code>SELECT first_name,SUM(sales)    FROM cookie_sales    GROUP BY first_name    ORDER BY SUM(sales) DESC    LIMIT 1,1;</code><br>    指定呈现的结果为第两行<br>    LIMIT 0,4;   0是查询结果的起始处，sql从0开始计数；4是返回查询结果的数量<br></li><br></ul><br><hr><br><h2>第七章 多张表的数据库设计</h2><br><ul><br><li>表应该是为了节省精力而设计。别为了克服设计不良的表而执意改善查询</li><br><li><code>UPDATE my_contacts SET interests = TRIM(RIGHT(interests,(LENGTH(interests) - LENGTH(interest1) - 1)));</code><br>    TRIM能清楚字符串前的所有空格<br></li><br><li>Schema   数据库模式<br>    描述数据库中的数据（列和表）、其他相关对象，以及这些对象相互连接的方式<br></li><br><li>Foreign key   外键<br>    外键是表中的某一列，它引用到另一个表的主键<br>    外键使用的主键被称为父键，主键所在的表称为父表<br>    外键能用于确认一张表中的行与另一张表中的行相对应<br>    外键的值可以是NULL<br>    外键值不需要唯一，通常，外键都没有唯一性<br></li><br><li>创建在结构内的键被称为约束（constraint）<br>    插入外键列的值必须已经存在于父表的来源列中，这是引用完整性（referential integrity）<br>    创建外键作为表的约束提供了明确的优势，如果违反了规则，约束会阻止我们破坏表<br></li><br><li>创建带有外键的表<br>    <code>CREATE TABLE interests (    int_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,    interest VARCHAR(50) NOT NULL,    contact_id INT NOT NULL,    CONSTRAINT my_contacts_contact_id_fk    FOREIGN KEY (contact_id)    REFERENCES my_contacts (contact_id)    );</code><br>    另一种指定主键的方式，在同一行代码中加入PRIMARY KEY命令<br>    创建外键和创建索引列一样的设定<br>    CONSTRAINT 键的来源表<strong>键的名称</strong>说明是外键<br></li><br><li>One-to-One relationship   一对一关系（不经常使用）<br>    父表中的一行记录只与子表中的一行记录相关联<br><br>    One-to-Many relationship   一对多关系<br>    一张表中的一行记录可能与另一张表中的多行记录相关联，<br>    但后一张表中的任一行记录只会与前一张表中的一行记录相关联<br><br>    Many-to-Many relationship   多对多关系<br>    两个通过junction table连接的表，让一张表中的多行记录能与另一张表中的多行记录相关联，反之亦然<br>    junction table连接表<br></li><br><li>Composite key   组合键<br>    由多个列构成的主键，组合各列后形成具有唯一性的键<br></li><br><li>函数依赖   当某列的数据必须随着另一列的数据的改变而改变时，表示第一列函数依赖于第二列<br>    速记符号   T.x -&gt; T.y   在关系表T中，y列函数依赖于x列<br></li><br><li>partial functional dependency   部分函数依赖<br>    非主键的列依赖于组合主键的某个部分（但不是完全依赖于组合主键）<br></li><br><li>Transitive functional dependency   传递函数依赖<br>    指任何非键列依赖于另一个非键列<br>    如果改变任何非键列可能造成其他列的改变，即为传递函数依赖<br></li><br><li>First normal form(1NF)   第一范式<br>    列中只包含原子性数据，而且列内没有重复的数据组<br><br>    Second normal for(2NF)   第二范式（重点：表的主键如何与其他数据产生关系）<br>    表必须先符合1NF，同时不能包含部分函数依赖性，才算满足2NF<br><br>    Third normal for(3NF)   第三范式<br>    表必须先符合2NF，同时不能包含可传递函数依赖性<br></li><br><img src="https://github.com/xujing15/xujing15.github.io/2018/06/26/20180626_1/01.png" alt="加上外键的表1"><br><img src="https://github.com/xujing15/xujing15.github.io/2018/06/26/20180626_1/02.png" alt="加上外键的表2"><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;续&lt;br&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;2018年6月26日 周二 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一天（1）</title>
+    <link href="http://xujing15.github.io/2018/06/19/20180619_1/"/>
+    <id>http://xujing15.github.io/2018/06/19/20180619_1/</id>
+    <published>2018-06-19T15:59:58.000Z</published>
+    <updated>2018-06-29T02:58:59.193Z</updated>
+    
+    <content type="html"><![CDATA[<p>Head First HTML与CSS（第二版）<br>2018年6月18日 周二 阴雨，有时晴<br><a id="more"></a></p><p></p><h1>Head First HTML与CSS（第二版）</h1><p></p><p></p><h2>第一章 认识HTML</h2><p></p><ul><br><li>HTML是超文本标记语言（HyperText Markup Language）的缩写，用来建立网页的<b>结构</b></li><br><li>HTML注释<code>&lt;!-- 我是注释 --&gt;</code></li><br><li>要告诉浏览器页面的结构，需要用成对的标记包围页面内容。<br>    元素=开始标记+内容+结束标记（有例外，没有结束标记）<br>    开始标记有属性<br>    结束标记以/为标记<br></li><br><li>CSS是层叠样式表（Cascading Style Sheets）的缩写，用来控制HTML的<b>表现</b></li><br><br><li><code>&lt;head&gt;</code>元素：网页的信息<br>    <code>&lt;style&gt;</code>元素放在<code>&lt;head&gt;</code>元素里<br></li><br><li><code>&lt;body&gt;</code>元素：浏览器中显示的内容</li><br><li>浏览器忽略大多数空白符（制表符、回车、空格）</li><br><li><a href="https://xujing15.github.io/2018/06/19/20180619_1/box_model.    png">盒子模型示意图</a><br>    用边框（<code>border:2px dotted black;</code>）也许可以区分内容区和内边框<br></li><br><li>可以使用CSS在HTML中指定元素的特性。</li><br><li>HTML中元素的特性和属性两者不同</li><br></ul><p></p><h2>第二章 深入了解超文本</h2><p></p><ul><br><li>使用<code>&lt;a&gt;</code>元素创建一个超文本链接，链接到另一个web页面<br>    <code>&lt;a&gt;</code>元素的href（Hypertext Reference）属性指定了链接的目标文件，属性是元素的附加说明，属性值需要用双引号括起<br>    <code>&lt;a&gt;</code>元素的内容是链接的标签，可以是文字或图像，可以单击<br></li><br><li>..  源文件的上层文件夹<br>    /（斜线）   分割路径的各个部分<br>    文件名和文件夹名不要使用空格<br></li><br></ul><p></p><h2>第三章 web页面建设</h2><p></p><ul><br><li>HTML是超文本标记语言（HyperText Markup Language）的缩写，用来建立网页的<b>结构</b></li><br><li>HTML注释<code>&lt;!-- 我是注释 --&gt;</code></li><br><li>要告诉浏览器页面的结构，需要用成对的标记包围页面内容。<br>    元素=开始标记+内容+结束标记（有例外，没有结束标记）<br>    开始标记有属性<br>    结束标记以/为标记<br></li><br><li>CSS是层叠样式表（Cascading Style Sheets）的缩写，用来控制HTML的<b>表现</b></li><br><br><li><code>&lt;head&gt;</code>元素：网页的信息<br>    <code>&lt;style&gt;</code>元素放在<code>&lt;head&gt;</code>元素里<br></li><br><li><code>&lt;body&gt;</code>元素：浏览器中显示的内容</li><br><li>浏览器忽略大多数空白符（制表符、回车、空格）</li><br><li><a href="https://xujing15.github.io/2018/06/19/20180619_1/box_model.    png">盒子模型示意图</a><br>    用边框（<code>border:2px dotted black;</code>）也许可以区分内容区和内边框<br></li><br><li>可以使用CSS在HTML中指定元素的特性。</li><br><li>HTML中元素的特性和属性两者不同</li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Head First HTML与CSS（第二版）&lt;br&gt;2018年6月18日 周二 阴雨，有时晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="html，css" scheme="http://xujing15.github.io/tags/html%EF%BC%8Ccss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第十寒(2)</title>
+    <link href="http://xujing15.github.io/2018/06/17/20180617_2/"/>
+    <id>http://xujing15.github.io/2018/06/17/20180617_2/</id>
+    <published>2018-06-17T15:59:58.000Z</published>
+    <updated>2018-06-29T03:05:45.039Z</updated>
+    
+    <content type="html"><![CDATA[<p>续<br>深入浅出SQL中文版(Head First SQL)<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>第四章 聪明的表设计</h2><p></p><ul><br><li>使用数据的方式将影响设计表的方式。</li><br><li>数据原子性：列中的数据是查询所需的最小单位<br>    规则一：具原子性表示在同一列中不会存储多个类型相同的数据。<br>    规则二：具原子性表示不会用多个列来存储类型相同的数据。<br></li><br><li>规范化表的优点：<br>    1.规范化表中没有重复的数据，可以减小数据库的大小。<br>    2.因为查找的数据较少，你的查询会更为快速。<br></li><br><li>FIRST NORMAL FROM(1NF)第一范式：每个数据行均需包含原子性数据值，而且每个数据行均需具有唯一的识别方法。<br></li><br><li>PRIMARY KEY   主键。能识别<b>唯一</b>数据行的列。<br>    注意：主键不可以为NULL<br>    插入新纪录时必须指定主键值<br>    主键必须简洁<br>    主键值不可以被修改<br></li><br><li>最佳主键可能是新的主键</li><br><li><code>SHOW CREATE TABLE 表名;</code>  呈现创建现有表的语句<br>    <code>SHOW COLUMNS FROM tablename;</code>   显示表的所有列及其数据类型，还有其他关于列的细节信息<br>    <code>SHOW CREATE DATABASE databasename;</code>   呈现创建现有数据库的语句<br>    <code>SHOW INDEX FROM tablename;</code>   重要的命令，显示任何有索引的列及其索引类型，目前接触到的索引是主键<br>    <code>SHOW WARNINGS;</code>   得到确切的警告消息<br></li><br><li>创建带有主键的表：<br>    <code>CREATE TABLE my_contacts     (    contact_id INT NOT NULL AUTO_INCREMENT,    ......,    ......,    ......,    PRAMIRY KEY(contact_id)    );</code><br></li><br><li>AUTO_INCREMENT   列的声明使用这个关键字，会自动给列赋予唯一的递增整数值（可以被覆盖）</li><br><br><h3>补充内容：</h3><br><li><code>CREATE TABLE tableName SELECT * FROM databaseName.tableName;</code>  从一个数据库复制表到另一个数据库</li><br><li><code>mysql -uroot -p</code>   连接到本机上的mysql<br>    exit   退出mysql<br></li><br></ul><br><hr><br><h2>第五章 ALTER</h2><br><ul><br><li>ALTER ADD   列添加到表中<br>    ALTER DROP   删除表中的列<br>    ALTER CHANGE   修改现有列的名称和类型<br>    ALTER MODIFY   只修改现有列的类型(位置，我的没成功)<br><br>    <code>ALTER TABLE my_contacts    ADD COLUMN contact_id INT NOT NULL AUTO_INCREMENT FIRST,    ADD PRIMARY KEY (contact_id);</code><br>    添加主键列，自动递增，放在第一位<br><br>    <code>ALTER TABLE old_tablename RENAME TO new_tablename;</code>改变表名<br><br>    <code>ALTER TABLE tablename    CHANGE COLUMN old_columnname new_columnname new_type;</code><br><br>    <code>ALTER TABLE tablename    MODIFY COLUMN columnname type;</code><br><br>    <code>ALTER TABLE tablename    DROP COLUMN columnname;</code><br><br>    <code>ALTER TABLE tablename    DROP PRIMARY KEY;</code><br>    移除主键的设置<br><br>    <code>ALTER TABLE tablename CHANGE anothercolumnname anothercolumnname INT(11) NOT NULL AUTO_INCREMENT;</code><br>    <code>ALTER TABLE tablename CHANGE columnname columnname INT(11) NOT NULL;</code><br>    移除某列的自动递增<br>    表中只有一列可以加上AUTO_INCREMENT，并且该列必须是整数类型（不能包含NULL）<br></li><br><li>和ADD搭配<br>    关键字FIRST,SECOND,THIRD…LAST<br>    AFTER column_name,BEFORE column_name<br></li><br><li>类型转换可能会丢失数据</li><br><li>文本值以及有CHAR或VARCHAR类型的列中存储的值都被成为字符串（string）<br>    String Function   字符串函数   可修改字符串列的内容副本并以查询结果的形式返回，原始数据不会改变<br>    SELECT RIGHT(location, 2) FROM my_contacts;<br>    RIGHT()   从列的右侧选取一定数量的字符<br>    LEFT()    左侧<br><br>    <code>SELECT SUBSTRING_INDEX(location, &#39;,&#39;, 1) FROM my_contacts;</code><br>    截取单引号里（逗号）前的子字符串，1是第一个逗号，2是第二个，以此类推<br><br>    SUBSTRING(you_string, start_position, length)<br>    截取起始位置，一定长度的子字符串<br>    UPPER(your_string)<br>    LOWER(your_string)<br>    字符串全部大写/小写<br>    REVERSE(your_string)<br>    反转字符串<br>    LTRIM(your_string)<br>    RTRIM(your_string)<br>    清楚左侧/右侧多余的字符串<br>    LENGTH(your_string)<br>    返回字符串的长度<br></li><br><li>更新列中的内容UPDATE<br>    <code>UPDATE table_name    SET column_name = newvalue (WHERE ...);    UPDATE my_contacts    SET state = RIGHT(location, 2);</code>更新表中state列的所有内容<br><br>    字符串函数可以和SELECT,UPDATE,DELETE搭配使用<br></li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;续&lt;br&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第十寒(1)</title>
+    <link href="http://xujing15.github.io/2018/06/17/20180617_1/"/>
+    <id>http://xujing15.github.io/2018/06/17/20180617_1/</id>
+    <published>2018-06-17T15:59:58.000Z</published>
+    <updated>2018-06-29T03:04:27.731Z</updated>
+    
+    <content type="html"><![CDATA[<p>深入浅出SQL中文版(Head First SQL)<br>2018年6月17日 周日 阴雨<br><a id="more"></a></p><p></p><h1>深入浅出SQL中文版(Head First SQL)</h1><p></p><p></p><h2>第一章 数据和表</h2><p></p><ul><br><li><code>CREATE DATABASE</code>创建数据库</li><br><li><code>USE DATABASE</code>进入数据库</li><br><li><code>CREATE TABLE</code>创建表，需要知道COLUMN NAMES和DATA TYPES</li><br><li>NULL和NOT NULL，创建表时可以设置NOT NULL<br>    NULL未定义的值，没有在INSERT语句中赋值的列默认是NULL</li><br><li>DEFAULT指定默认值，创建表时可以设置</li><br><li><code>DROP TABLE</code>删除表</li><br><li><code>DESC TABLE</code>查看表</li><br><li><code>INSERT INTO TABLE (COLUMN NAMES…) VALUES (values…);</code>向表中插入数据<br>    简写版：<code>INSERT INTO TABLE VALUES (values…);</code></li><br></ul><br><hr><br><h2>第二章 SELECT语句</h2><br><ul><br><li><code>SELECT * FROM 表名;</code>   选择表中所有列的内容<br>    <code>SELECT * FROM 表名 WHERE 列名=指定值;</code>   选择表中具有指定值的列的内容<br>   <code>SELECT 列名1,列名2... FROM 表名 WHERE 列名=指定值;</code>   选择表中具有指定值的指定列的内容</li><br><li>*是“所有”的意思</li><br><li>单引号转义：’或\</li><br><li>运算符：AND     同时满足条件<br>    OR      符合一个条件即可<br>    NOT（有时NOT紧跟WHERE之后）NOT IN，NOT 列名 LIKE，NOT 列名 BETWEEN搭配使用<br>    =   &lt;&gt;  &lt;   &gt;   &lt;=  &gt;=<br>    比较运算符除了用于数字，还可以用于字母</li><br><li>IS NULL：检查列的值是不是NULL（NULL和NULL不相等）</li><br><li>LIKE搭配通配符（%多个字符     _一个字符），可以匹配字符串(字符串用单引号括起来)</li><br><li>BETWEEN：一个范围内的值，包括首尾数字，不包括尾数字</li><br><li>…WHERE 列名 IN (一个集合);</li><br></ul><br><hr><br><h2>第三章 DELETE和UPDATE</h2><br><ul><br><li><code>DELETE FROM 表名;</code>   删除表中所有记录，等价于DROP 表名;<br>    <code>DELETE FROM 表名 WHERE 列名=指定值;</code>   删除表中具有指定值的行<br></li><br><li><code>UPDATE FROM 表名 SET 列名=新值;</code>   更改表中记录<br>    <code>UPDATE FROM 表名 SET 列名=新值 WHERE 列名=指定值;</code>   更改表中具有指定值的记录<br>    UPDATE相当于INSERT+DELETE<br>    sql中等号和赋值都是使用=<br></li><br><li>在sql中，可以套用数学计算，加减乘除，如… SET cost=cost+1 WHERE …</li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;深入浅出SQL中文版(Head First SQL)&lt;br&gt;2018年6月17日 周日 阴雨&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="sql" scheme="http://xujing15.github.io/tags/sql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一曝十寒之第九寒(1)</title>
+    <link href="http://xujing15.github.io/2018/06/15/20180615_1/"/>
+    <id>http://xujing15.github.io/2018/06/15/20180615_1/</id>
+    <published>2018-06-15T15:59:58.000Z</published>
+    <updated>2018-06-18T10:49:57.729Z</updated>
+    
+    <content type="html"><![CDATA[<p>小甲鱼javascript部分案例<br>2018年6月15日 周五 晴<br><a id="more"></a></p><ul><br><li>输入一个整数，求出该数各位数字的和：<br><a href="https://xujing15.github.io/2018/06/15/0034/">https://xujing15.github.io/2018/06/15/0034/</a><br></li><br><li>登陆界面（数组版），较简陋：<br><a href="https://xujing15.github.io/2018/06/15/0039/">https://xujing15.github.io/2018/06/15/0039/</a><br></li><br><li>数组的reverse()方法，点击事件和函数的使用：<br><a href="https://xujing15.github.io/2018/06/15/0053/">https://xujing15.github.io/2018/06/15/0053/</a><br></li><br><li>二维数组，特别是script中的表格：<br><a href="https://xujing15.github.io/2018/06/15/0055/">https://xujing15.github.io/2018/06/15/0055/</a><br></li><br></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;小甲鱼javascript部分案例&lt;br&gt;2018年6月15日 周五 晴&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://xujing15.github.io/tags/javascript/"/>
     
   </entry>
   
@@ -43,7 +263,7 @@
     <published>2017-09-28T15:59:58.000Z</published>
     <updated>2017-09-29T07:34:06.000Z</updated>
     
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+cahETz+7IJrcoFiSF4ywHibswgoRMMSqXJtaGprsDNv74D32T0iUsrEvvmj68RHGAaorxqOE3dfLYo8soL2jVD08Ts3EqH5JdBBOJl5HVwPkXjX4rOkUQI5Xw9Gtp908AYrQj8PIFCCWOvj1HzyXPVdEI6FDeZUJXw2n60M4F3IWt8VOJuJo6kVYl1CZnMfKGYrLX3fe1Il97UuwbCZzfS4gCk5tWnCiP9X+4nu8ODMwna8WE0/xpn0WzHr5lik1mlFeJg3Or33llQz3KnRHn03lVAhftSf7wc4/U7Q2i9Ehkn1lDJiftnBCkVftcPB7rGk8FfWLYg8Nmid71OzHxLMoDphYMvxhXwfE7Vd7bHXTj3PIr6/pVeuCCc1LT94rwTI7N2NjJUQ==</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX19cMN8FTIodpdgGy/L9VhoJrN87JTq8ZNpJLCaFXwxovCEdN2GlCRXrcEIcNLF7+CFR8tMMXC93BDNyjS9sR+Cvmze6v254Odfwuzybtba1QIGuJ05LOSL1UC3fsSJeqH9nt8WG3hd+Y0QQtp1ukFpcZE2CHzrzJC2fpGg++SP3bd9udZcYs17aKY6/A5XVejDhGBR4aCbaZOIrMF8AaeIx1C81Hvijqtv7yhUXPXDMW+AAQXsYy/xXtzPqFoJVy3jdbfxfAvTe9xWFW3roCLtFNP8cYuu4NOD6mt6oaOE8DsYe2qFQSuXYmgGFqi1RaDPBvahQ6c65T+xoHkGSjAMJkB4YTzUkJTbP/ni5B6nEyWrWUvVGCF+jmbIlsVp67sz1jmK6MnaEhA==</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
     
     <summary type="html">
     
@@ -63,7 +283,7 @@
     <published>2017-09-28T15:59:58.000Z</published>
     <updated>2017-09-29T07:39:26.000Z</updated>
     
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">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</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">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</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
     
     <summary type="html">
     
@@ -83,7 +303,7 @@
     <published>2017-09-27T15:59:58.000Z</published>
     <updated>2017-09-29T07:36:42.000Z</updated>
     
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+XMCgIOiOYN818A2sU68WP0hCqQYol2Yl+d+PFFh/Mp6wwY02LelrC4J7sSEObZVUHpimXsY8FZo/JfMO3KzsuUP9IfsUZnmMDnNJfrLB5tx5IZLXwap49sKhGTKjzTYG0oFv5FCsZm6k5GsdAcFZis4dMqNIBcGSJ481KrUxtF8PeU8DNZVshiHSpBUoOCbEzyHynGSIGs2Vs/a7DQNegrP3zz1uzTgXm8X3oXxBKPG2NKs+RDdR865KO87MUK2zIvLCV7F/8FnMa5civDZ1oVfqeEJf5cGKFmCcQYrFjXtP6CWti6y0LoJFBinkhlQ0TqJXzLiB372PnsRwveuH60K3bihqPfYsSoPLOmFdulRkW/TcC2JLQ5s70G/ZB0VM24tzHLWx5aLByyb6wc+g6e4rS2yRQ5YIGjl1oAaDRuRNqaPZuZZGjp1hVie/2ZxBx1zmu1CpjRjqMgOjKyrktSuRRXkFTUgD/m0QOGzWjKFiorNzmx3x0GiCSpCiFMeMSCJGJro2POaI/nNPf0dgUTes/3DlUMV4=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1/SCvN2Pkkiu/Kbh9FxKk5QFqoJH23MBl+tudmfQrrK+S+PtGW/IpZIHbUwo0lUft6VMR//geXVBzB30F2269V8K2LH+xYaE6xS4bJKqCzccPsBxFebwgS+pBBijizAhS+8FHHGOgoNExCtBkQ3+MjwpHhP8TZhEljdrgTRA+7EpNSjir+X6IEkFc9ypUIsU4XF1OObBivKc7vQGnv/crZ90mJqYnvPbEF98DBIGokkpxv/rfamvnUw6F1SsnaE268YWw0FG0jzLEvc5R8n7vhBXYXns10M76/8D7yzfPEbpdXsRv75D6cba+KDd1AyWderyYUs6fx2dqopJ4rKgTBj64zaQHo/llOCBECJ2iPN+mtU5ZC+Kpvuc3RqYqWT55pMRTfFlLhTJZbqWYG01MKWdm2dK6tZGmq4NXji+Ng1rm6nDma+fFKKaGqeD2gHXHkTVp3ISmu3/vhNKCMFVAvK35UP/M1O3c8Y5sTSZORJt6WXRclMukQYwUon3NGR5AEIY8WlILkzSHSNAKSKox1aQJ1+7W7T4X8=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
     
     <summary type="html">
     
@@ -197,257 +417,11 @@
     <published>2017-09-24T15:59:58.000Z</published>
     <updated>2017-09-25T07:09:03.000Z</updated>
     
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX185xlQPTLpbPTn0GnBB7yNUFCl/g9UMIn9xZIFdsJkf48sJahk6gGLwbvKMJsjZNBD1Fs5AoNBXoxiK/X4bDzqfXolaQa7ngTesgF4HlSvXC/ZCrTc9mFoqHaNXYdq0C6nkrCBbSPoSD1PI3qMKYRou8ZRYI59gvatC78zbhqW9vUgljSB8hFDqQchwPUtBS36AqnkQ4hsf1UfTiigPHquOmJse8AzorAMSfbr8M8zZmrnz8FJmq6ZZWKUJ8ZzmKxyHavOIVXFjGZLUZYNBt18D4v/GkCwOlq5qFWBhl8zBvOza29OrEAz4rtS5s2vXTpL+EDpFVSVmXxSrTMtD6XqvQyA2AA2FJSaFroppxCErQbT8z5pSlHFlQhace7/dX7HjDByUtt3Q/0nVJWfkTkCwPoL6T+H080P7sW090VDakR8C2b2O9sYDt8LMP8u7h97bvj2NLC21OOhpSYotG+WLAIl4Gah/LhmrUjRc1rdxnJF4qo2CKwZsw0BZVVj2CwUnuU4+pUJqqHGuAh0TZp1+9Yiokf5e5ZOBaqsrhqujv8OKMgd/pZCHU67lFp9Zu6JU6p+KFSSD4jLzYrctipeChEEwm0JHBAkZHRlBTmuEa3GXR5Q4qC76WN99I8VSx5H1SULBQoBDmCzfnwwxeeYnDwilpXfKMLDVQ+vK664n0YmIRZzXOkThhR+IgmrHPqLuuzOgJBG0h3nMdQjU51zelDuMVxZ21+pXUkEsKWtPykrHnzy/i3FsxG8fStPYu9XQGis7FxzIo6HLpbXdLMmeFNniP8erdphAhcYmSqllAUoBCbvVMAHx2kEh7VkJIo3ZZi+1iBQjfYF+ox4/0sKCm9jloDFwavBnPJxCMkA5bdpkAYl2+JT3Rx6Hc4qTxM8jbbWy8OErqyEFphRT8otSchBS9TSK5Xg=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
+    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+44chGyTD/y3cD5CsZ7eosDDYXTQQU3m8v7RB2mUCmkxYobj0rmyinXK3XzNHBn2hkYBgRxDsnmW0Y/8TQgDMMtnfKIELHnp21r2kGnSBYEnMn+x5BA6AWlNwhGSAuO0a9+NKGai8q8dARL9ZPkJtfwa3/hti6ugj4kk6dDfEyeIYjR0PDHWVESmEmBop43rwJesaYVDNNsrtMnOLz13TwVsfkSppSBhrtyfdz8vGG/CjXMWsrUl0THeKZUbvE/Cm/Q16R7hxkM2HUgrG6eIzDW8IrqpWJpPKnzhjFbjjkcihZFipBmyuQ3zVkIGCjEPZWoPLbSHFSpFjJxhEflJ3EIskZ0cob0Lwh1pkZJ8h9x9t1PyjR13Agx5kxGafP7pig53JoXZLq8cNgi6I9476EXDQlb7CTQHEPj3rX1N9jTk+80ouT4nkQXcP8HbpRHBMJjRc7VwAS3S8UpDh3rOO1nThIM0ULd7M7NyTY2XNjJ+X4nP7yVRZ2MNRtWCbFOZCYahQcS13Ue9qzxT3r7G06x2JUSlaaeUZbwuyivx6TqZ05IewtUDoem4c+MV8haGPZoxGlvAB/YAk59BKnbVE6SPKapnub+Sn1jbsBhnIEMAHHo3mjm2g3FeFh9iwTzfVoTgHdnY34sSk0LqRO7qev6LPlOtvHOOCAW25BH/LWoHM4YK0OjQKBCbMbMdncnjqDHcglfdZ4w27lov1KWfqJELr5XioOzv5IiRE2RjuF5a6xi1HqwAnzhNJjOVgEIoDgp0WOAx82trOVSGLv0bhqwJ/2f8vrwYZcsK4ysntlsg9RDhsY3baBxcgVwaJyzivywXiNOmiwGeAg1gcr9zWI3mKHVnTWBXLVMj2/8cyxrW3d3ItV4O/j2CJkrtMfebUVzr1S30MkR/NHipFyyo6zFBk6tksp/X8=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;2017年9月24日 周日 晴&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一曝十寒之第二寒(1)</title>
-    <link href="http://xujing15.github.io/2017/09/23/20170923_1/"/>
-    <id>http://xujing15.github.io/2017/09/23/20170923_1/</id>
-    <published>2017-09-23T15:59:58.000Z</published>
-    <updated>2017-09-25T07:08:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+brQ78oCYOTXdC6cY3509eh1MNLZYWRx6njJNRppX3KH9avABq+jQXPeHd9lL6bLl6sw+7xVMtmGT6A8nd+WZPBDUYrFWcHAoPlJ7jAt4MLuQkzHFonL75GzhT5PtMRXvNgRCoKBmkLMijzJc1T9QpcMUnYZUHg13YCMs4h1pPqILKXoankfKpUuNC2Mv9BXYZp7zIC/alx+j/q+j5u7RtqUztVDRWwOD/Qrrq1YU+cZ708A7hqUIZn1OxILct/FHpRCuvm8QZRIUyltne5ACLZ95CPNZdOssTCE/vFeaSB92MxoU649Api0fObpJr5lHw9japRer1JEI3esdDKxFrEedTmRKsTAFSWz4i+FRZNcZhIcKc1M9avS6vdxQxSVFW0szXGTzhG3AyTzkfnowum+vejoZgQK+0tle6ZL6FBQB2EXXKKIA3Y753wsC4LyMsfdU1ZQ7PC8dNNGYx5On0od3ixWGdbf0=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2017年9月23日 周六 晴&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一曝十寒之第一寒(1)</title>
-    <link href="http://xujing15.github.io/2017/09/22/20170922_1/"/>
-    <id>http://xujing15.github.io/2017/09/22/20170922_1/</id>
-    <published>2017-09-22T15:59:58.000Z</published>
-    <updated>2017-09-25T07:08:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX19CIpRsSvmgaEtUfz6qbtC1o34SmDCuQIXGvdLKklS9OHHvFJkffaXJkYrlOIuxyxdCBo/meNLJ3HAvpVZdnOtK0z+kN5fElxJSdFP79NTxNdG/2nzHGhIlj/JRy8ONrhOxkdqPrjf73r4irGbQwy6HxfTEViiRPHkprwp9KewfB+npo7stfbP6QhY8msR0e/K6Q2KAsYljNlMr7R3CDXhb8ayFgahg0pg18bn9f63Y4Ov3EgZN36Um2NZzEXKZiWv0nWZISkLYatDtbvbLZb6pPuIS2kkcw/8VBhY9E/swzl9+5OXsxNg7mBhbLjgW3uHv/8HZtwqtmfvWcqfRu68symACzp5KaKo2Pj/lU/uiGVCKPqTQAZDrDWXU7f/d9Etzu3cxcvdAha9P2Px7KUqjObl/oyRqwmlJx3vuJW5feD6PWnuVHKBMctcuzZG5Fy/+Byw2ljBPUH5zEx+Y/0gmXL8dXL/4dawM8RtyYTfig8HNdrAF2HRDeVzaFAwrs5LVOmbfW3KECtMWXETVhWvbKNHaQrJQuLHM1XchFfWmLPW8vR9q+wapU88TtTKEDkNs3bly0nww/3F8z1lMmEDEWWiJZbiZXOxLeqmrRQ/jI4xNux/aldJLxyvJMwzqu7FlBRlzm3EH5pHM1dO06wplkfSK3hLAzI2kM5489rXIBz4t8bBIGTTUo9i4QhzHNs6MK7V+KSngeG7CK3ypVgZOej6dizbI5c/ZspRC2xNwKvtPZJGBI961haY51FUSyQdFifouDlq/kl8HOcNupxmhzZ+bWFt+kCFmKXsq4hqeua27UbQJfo3EdGsNxVVqjZuilNeAqgfIGrlD/reL6UGHN9u8qrEMY1kWinEHWAs1VgtPfbEW7vakSDDZx6PtLZ6nLIvCxyOEigRVco6AoEcy6dntew63fGjyC0xBdf7sV4+1mD/Q3uah59DCqzXsvye5CiD2PQgyQot49/v+vPTqpEEPkjjLmI671t0Yfo6qu1KN3OORWLxhvkHMcnjRrAdpGt7EKskiqmbqtKuFiXgYu87XyOViSmcPUGIFAj7VPyaXvtmM8YoWPT2WKGctmYbIn3yTrRVlwI4VLmfchoomVFyEwYIxFBx5t000U69rh6ip82eAeA4Z</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2017年9月22日 周五 雨&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一曝十寒之一曝(3)</title>
-    <link href="http://xujing15.github.io/2017/09/21/20170921_3/"/>
-    <id>http://xujing15.github.io/2017/09/21/20170921_3/</id>
-    <published>2017-09-21T15:59:59.000Z</published>
-    <updated>2017-09-22T10:55:12.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>markdown搭建博客第一篇<br><a id="more"></a><br>参考：<a href="http://wowubuntu.com/markdown/#p" target="_blank" rel="external">https://crackcer.com/hexo-aes-password.html</a>；小甲鱼关于markdown的七篇文章</p><p>虽然说是markdown，用的是sublime test2，有时候会说试用到期比较烦。这样就不会自动加\，造成一些麻烦了。和html代码混用，博客网页会更有意思。</p><h4 id="首行缩进字符"><a href="#首行缩进字符" class="headerlink" title="首行缩进字符"></a>首行缩进字符</h4><p><code>&amp;ensp;</code> 半角的空格<br><code>&amp;emsp;</code>全角的空格</p><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>文字前加#</p><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p><strong>无序列表</strong>：文字前加-或*，空一格<br><strong>有序列表</strong>：文字前加1.2.3.（数字.），空一格</p><h4 id="字体，字号与颜色"><a href="#字体，字号与颜色" class="headerlink" title="字体，字号与颜色"></a>字体，字号与颜色</h4><p><code>&lt;font color=gray&gt;color=gray&lt;/font&gt;</code></p><p><font color="gray">color=gray</font><br><code>&lt;font color=#00ffff&gt;color=#00ffff&lt;/font&gt;</code></p><p><font color="#00ffff">color=#00ffff</font><br><code>&lt;font size=7&gt;size=7&lt;/font&gt;</code></p><p><font size="7">size=7</font></p><p><font face="黑体">我是黑体字</font><br><code>&lt;font face=&quot;黑体&quot;&gt;我是黑体字&lt;/font&gt;</code></p><h4 id="背景色"><a href="#背景色" class="headerlink" title="背景色"></a>背景色</h4><p><code>&lt;table&gt;&lt;tr&gt;&lt;td bgcolor=orange&gt;背景色是：orange&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></p><p><table><tr><td bgcolor="orange">背景色是：orange</td></tr></table></p><h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><p>文字前加></p><h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><p><code>[www.baidu.com](www.baidu.com)</code><br><a href="www.baidu.com">www.baidu.com</a><br><code>[百度](www.baidu.com)</code><br><a href="www.baidu.com">百度</a></p><h4 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h4><p><code>![熊本熊](https://github.com/xujing15/xujing15.github.io/blob/master/about/hahaha.jpeg?raw=true)</code><br><img src="https://github.com/xujing15/xujing15.github.io/blob/master/about/hahaha.jpeg?raw=true" alt="熊本熊"></p><h4 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h4><p><code>*粗体*</code><br><em>粗体</em><br><code>*斜体*</code><br><em>斜体</em></p><h4 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h4><p>三个*</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;markdown搭建博客第一篇&lt;br&gt;
-    
-    </summary>
-    
-      <category term="markdown" scheme="http://xujing15.github.io/categories/markdown/"/>
-    
-    
-      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-      <category term="markdown" scheme="http://xujing15.github.io/tags/markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一曝十寒之一曝(2)</title>
-    <link href="http://xujing15.github.io/2017/09/21/20170921_2/"/>
-    <id>http://xujing15.github.io/2017/09/21/20170921_2/</id>
-    <published>2017-09-21T15:59:58.000Z</published>
-    <updated>2018-06-15T08:24:29.698Z</updated>
-    
-    <content type="html"><![CDATA[<p>整理grafting through工作<br><a id="more"></a><br>看过的文献：</p><ul><li>“Grafting Through”: Mechanistic Aspects of Radical Polymerization Reactions with Surface-Attached Monomers（si）</li><li>Synthesis of a Linear Polyethylene Macromonomer and Preparation of Polystyrene-graft-Polyethylene Copolymers via Grafting-Through Atom Transfer Radical Polymerization </li><li>Polymer Brushes for Membrane Separations: A Review </li><li>Polymers at Interfaces: Using Atom Transfer Radical Polymerization in the Controlled Growth of Homopolymers and Block Copolymers from Silicon Surfaces in the Absence of Untethered Sacrificial Initiator </li><li>Surface Interaction Forces of Well-Defined, High-Density Polymer Brushes Studied by Atomic Force Microscopy. 1. Effect of Chain Length </li><li>“Grafting-Through”: Growing Polymer Brushes by Supplying Monomers through the Surface<br>和老师讨论过文献，说的不清楚，现在的打算是接着看看文献，好好整理，整理出一条脉络。朱师兄的部分代码，老师的部分想法也要整理一下，可以跑一些作业。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;整理grafting through工作&lt;br&gt;
-    
-    </summary>
-    
-      <category term="grafting through" scheme="http://xujing15.github.io/categories/grafting-through/"/>
-    
-    
-      <category term="grafting through" scheme="http://xujing15.github.io/tags/grafting-through/"/>
-    
-      <category term="工作" scheme="http://xujing15.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一曝十寒之一曝(1)</title>
-    <link href="http://xujing15.github.io/2017/09/21/20170921_1/"/>
-    <id>http://xujing15.github.io/2017/09/21/20170921_1/</id>
-    <published>2017-09-21T15:59:57.000Z</published>
-    <updated>2017-09-22T07:08:58.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+wzMYpqVUhk9Dt4gszcqXMo2aXVlyNcP7FCRZclbnKI36Z74/p7+EXF1sMTWqy2Bqj4fGFqnY8T4yDYzTfIqv6EzpZ0KKVITQpBv+zDKO/mPlZsFZO7UGhwy2wyovjn+nWXT84uy5yBKUHvSSl2IZ6B9OII6LFpOL4NiA4JDR48p/H+1E8RrVHM8zNJrk1CirNlHGqHgNYTtDwbEGURQU1SborkMhMo4iArdlR3X5irP+6vkhc7uf3l5TLw4oj9IXnfMSrLxLvvpXtxEFDkiHVWEmvJf6wSCvWH68dZS3IGYgU40wR8xi/PI/XaeQFqGMK8stQfpMhcoW64MitDwEElIr8n2wAArlB9c7WxS6Gj414XF77L2mU+QURtyilAZ8PWR3lWSfN93p2JyVEWxkuN37BviFKKhfmN63Ay0u/2KlXqPWPOIUYvSQA6zPt58qMdeod9B+KYgCLw9x/cWszRE5UyFeMYK4S6WWIXleXi+ZkXvxak/nAUN3N3pKSE3hSJsS0t1v6KjcVfomj8oom/sgGKY7VGaB1HwnMOrSxDAZGVmlX4uzrAdD7uw5nvbFs1gUFsDZpAttlIggrpc+FuYWneSHTW2FvNofS9hszPQXrB7osLTptQmLOFqGQTI5dAXjottCNPi36SY+1wPTIzrQdN5w9+X3QRFI0GEbzxJMxLRQu2+08nM0Es2+Wt5uXWwnhMZbT4HeMkpikeYIr0xxrTn6XHbi6XsT/hl6AvMjC756NkPO/wASYrPyhcsSzij/g136BrPIMy9ogKNoWEuZhDNaOdg8qtgJxTf1uoFdKY2cQokpHJhv+zJ3be8QWxDpZpdacsLAdfJ+pcrxsnbm41jeemZooaTVxf6bAyXYEYYcNIKLgrGNIWrtmlGEQ6BCfS4pTfxEc+jIfIaFoA7TJh7+917CNjwfcGIJXdGxn5+diEYAHls7fjhrE5IzSbxZfWGkRKCQiv8uci+Uo29RQdnXFI6vR/zCTJ7nj6UL/sC6ddJNnrTFFCpoGSS5eqxfhaveIsQl1rh46zBB1gqXaVsKXL9H2I4USNUIFNaTaJVg5RVwHuVJs1vGiEDKMFNEdRybn5MqFTF+Y6hlSl3XWd60fB+U=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2017年9月21日 周四 晴&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>两天晒网之第二天(2)</title>
-    <link href="http://xujing15.github.io/2017/09/20/20170920_2/"/>
-    <id>http://xujing15.github.io/2017/09/20/20170920_2/</id>
-    <published>2017-09-20T15:59:59.000Z</published>
-    <updated>2018-06-15T08:23:33.948Z</updated>
-    
-    <content type="html"><![CDATA[<p>hexo+github搭建博客第三篇<br><a id="more"></a></p><h4 id="使用AES算法加密hexo文章"><a href="#使用AES算法加密hexo文章" class="headerlink" title="使用AES算法加密hexo文章"></a>使用AES算法加密hexo文章</h4><p>安装hexo-encrypt插件：<code>npm install hexo-encrypt</code><br>在/hexo/package.json中加入：<code>”hexo-encrypt&quot;: &quot;^0.2.0&quot;,</code>，加在倒数第一行前<br>在/hexo/ _config.yml中加入：<br><code>\#encrypt</code><br><code>encrypt:</code><br>  <code>password: 123456</code><br>在想要加密的文件头部加入：<br><code>encrypt: true</code><br><code>enc_pwd: 123456</code></p><h4 id="添加分类"><a href="#添加分类" class="headerlink" title="添加分类"></a>添加分类</h4><p>新建一个页面，命名为categories：<code>hexo new page categories</code><br>在hexo/source/categories目录的index.md中修改:<br><code>---</code><br><code>title: categories</code><br><code>date:</code><br><code>type: &quot;categories&quot;</code><br><code>---</code><br>在hexo/themes/concise/_config.yml menu添加:<code>categories: /categories</code>（不添加就不会出现在菜单栏）<br>在想要分类的文章中添加:<code>category: &quot;hexo&quot;</code>  # 分类为hexo</p><h4 id="菜单栏about页面"><a href="#菜单栏about页面" class="headerlink" title="菜单栏about页面"></a>菜单栏about页面</h4><p>新建一个页面，命名为about：<code>hexo new page about</code><br>在hexo/source/about/index.md中添加内容<br>在hexo/_config.yml mean下添加：<code>About: /about</code></p><h4 id="为Hexo添加百度搜索"><a href="#为Hexo添加百度搜索" class="headerlink" title="为Hexo添加百度搜索"></a>为Hexo添加百度搜索</h4><p>打开themes/concise/layout/_widget/search.ejs文件，将里面内容替换</p><h4 id="使用swiftype实现站内搜索"><a href="#使用swiftype实现站内搜索" class="headerlink" title="使用swiftype实现站内搜索"></a>使用swiftype实现站内搜索</h4><p>在swiftype官网注册安装，默认已经设置好，根据自己的喜好更改。<br>因为默认的搜索框高度不合适，在search field项中，我选了use the swiftype search tab<br>在\hexo\themes\concise\layout_partial\after_footer.ejs中添加安装好给的代码</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;hexo+github搭建博客第三篇&lt;br&gt;
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://xujing15.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://xujing15.github.io/tags/hexo/"/>
-    
-      <category term="github" scheme="http://xujing15.github.io/tags/github/"/>
-    
-      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>两天晒网之第二天(1)</title>
-    <link href="http://xujing15.github.io/2017/09/20/20170920_1/"/>
-    <id>http://xujing15.github.io/2017/09/20/20170920_1/</id>
-    <published>2017-09-20T15:59:58.000Z</published>
-    <updated>2017-09-22T10:56:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1/O4fo+a9r8zBTAuNLHvZWgseqAb2+bnE5/p3ivzDe2C7rfM/PAZ2T9buCUo2BS64ShYiOVg39V3jbPc0z7fKQz9xZUEFSpcn5SCI5godQFOu8ocMRnD5K1kYRqEqmZKQWThfdy1G32dfcvThMT6iYZQqWLXWgleowdX5sVYuO4HA6DMqYyfcb7JPmVF/BQTeGo4v3Tcg0/uWWWABd745jrTZ0REZ7lF27Z8lMeqZsPcdOAMxS5ptiP/tGdq8ze73uJkLq7i8ZjtSoBbgicoqGv8LF6P9sDhr6f0LE8tBxXkRPILVfJGxR5VJaqc+uwZnEKARbr8OvHY6HQ5LN1C4j7i6NFdqgeRYjPSTcEqEFGtMPfnQjswOZPf9dv0xIsBBJxs+VkWXt/fWJZIEYNrkZ5EuaHnhJAX7sc1X1iRLgxV9g/aV6Ae2vwGgjegYBe/N7imrBsnj1oVUxid++TxU23YpIb91mFLc/iuWRGPpCYOS9OFz15bRz/Ah3CzyLhaHnXWYepn2qMgef421DoXrLw0YzmRNQvBelLbLp1E6r89vPoAy8ZHFy/qzEgoyt0L0egjdhT2MtkZj4d+A3pbUf3tRojjPQBUpoL/VzvJUGXGJtSACDCANZpd7q7LI/oTc8vB9eNDuPCCIxnU0D4vayX9jEt2krb1Cg53w5qjt829dA3aVnefjg77fxPvl33YcRwBJhOxVmmxN5o6qP1F1V4MdT+cen2+zEhNgJMZT4AEQuZhgMOQ/oCScNSdnC5M4Y5eqYcDaQKm2wkU9LgjtoxrLKAzYI9kklXyuf8cJdbOu52zKvunO0ti0u3nkHtLKRd3cglrnrJPtBsiPaqeCw2pkCUWOdJfDTxl4bUa7gi8WTqFMDVRwyeP3hwrzWLM74045lmx6fINIpBm4BI7HOSBvLzyRdZP70=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2017年9月20日 周二 晴&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>两天晒网之第一天(2)</title>
-    <link href="http://xujing15.github.io/2017/09/19/20170919_2/"/>
-    <id>http://xujing15.github.io/2017/09/19/20170919_2/</id>
-    <published>2017-09-19T15:59:59.000Z</published>
-    <updated>2017-09-22T10:56:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>hexo+github搭建博客第二篇<br><a id="more"></a><br>hexo设置多标签：tags: [标签1,标签2,标签3]</p><h4 id="添加rss："><a href="#添加rss：" class="headerlink" title="添加rss："></a>添加rss：</h4><p>1.安装RSS插件：<code>npm install hexo-generator-feed --save</code><br>2.在\hexo_config.yml添加<br><code>feed:</code><br>  <code>type: atom</code><br>  <code>path: atom.xml</code><br>  <code>limit: 20</code><br>3.在\hexo\themes\concise_config.yml添加<br><code>rss: /atom.xml</code><br>4.如果已经有RSS一栏，则不用执行此步。在\hexo\themes\concise\layout_partial\header.ejs中，找到ul添加一行代码。<br>5.将\hexo_config.yml中的url添加为自己的网址。<br>url: <a href="http://xujing15.github.io">http://xujing15.github.io</a></p><h4 id="添加sitemap"><a href="#添加sitemap" class="headerlink" title="添加sitemap"></a>添加sitemap</h4><p>1.安装sitemap插件：<code>npm install hexo-generator-sitemap --save</code><br>2.在\hexo_config.yml添加<br><code>sitemap:</code><br><code>path: sitemap.xml</code><br>3.访问xujing15.github.io/sitemap.xml</p><h4 id="添加文章导航"><a href="#添加文章导航" class="headerlink" title="添加文章导航"></a>添加文章导航</h4><p>1.在\hexo\themes\concise\layout_partial\post\article.ejs找到\&lt;%- item.content %>,在\&lt;%- item.content %>上方插入代码<br>2.在\hexo\themes\concise\source\css_partial\article.styl的最后添加代码<br>3.在要使用文章导航的文章首部加入<code>toc: true</code><br>暂时用不到这个，以后用到了在扩充内容，参考这个教程这块更详细<a href="http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/" target="_blank" rel="external">http://kuangqi.me/tricks/enable-table-of-contents-on-hexo/</a></p><h4 id="添加返回顶部"><a href="#添加返回顶部" class="headerlink" title="添加返回顶部"></a>添加返回顶部</h4><p>1.在\hexo\themes\concise\layout_partial中添加文件totop.ejs,在文件中添加以下代码，如果你对返回顶部按钮的位置不满意，可以在下面这段代码的style里面进行参数修改，bottom是按钮相对于窗口底部的位置，right是按钮相对于窗口右部的位置。<br>2.在\hexo\themes\concise\source\js中添加文件totop.js，在文件中添加代码<br>3.添加对以上两段代码的引用，在\hexo\themes\conciese\layout_partial\after_footer.ejs中的最下面，添加代码<br>4.添加返回顶部按钮的图片，选择自己想要用的图片，将图片复制到\hexo\themes\concise\source\imgs目录下，并将图片名字改为scrollup.png即可。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;hexo+github搭建博客第二篇&lt;br&gt;
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://xujing15.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://xujing15.github.io/tags/hexo/"/>
-    
-      <category term="github" scheme="http://xujing15.github.io/tags/github/"/>
-    
-      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>两天晒网之第一天(1)</title>
-    <link href="http://xujing15.github.io/2017/09/19/20170919_1/"/>
-    <id>http://xujing15.github.io/2017/09/19/20170919_1/</id>
-    <published>2017-09-19T15:59:58.000Z</published>
-    <updated>2017-09-22T06:31:40.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX19qdGUqLdfwkDrTys4xnBW5/iwA6TozbN1csy5bwsfFdK2LVMC5tSwYa5SJElAUcSyBpg2oo/O8QdtHfgQaHiH1nZX7si7ZwyHFN3m9aqAqBlvX3ovG4f3PV1kewhBvMonydritEuffxkaGJi0QmXjwksyvvEqInrXJzWjNtHL6dlQUQ2yb0KTvoBSlM+wYg+6QEsUMikjbeicQgCsrTl9P9IiLIT5C6hEhNEcgsSF092gbn0w7IOsET4W3aKdEzJGWeKDIwO9SYCY0kpMBdA4+33IRf1bn7HmYa+UcobhReA/LVtyRb196z3WzzFMeN3AMJPgin6Q9VGQlcroZhYP6BbMC9vizat48NYdJU2dAIKKXuhTyQZz0CLB16X97PEjqnLNNq3DO6x8MYB76rd5LeuhA3blmJN+Fa2s2GYJhu6P+3Atd79dBQGf0iYbQjggASqieQcmJy6TRRdgbdWhHSrRP87Hfptz5SvsCn+YqsXkfn8AQfjVUn3zd9JPwW35QqzwvQ80vSe8NVSRyoFxbEVooUH4Ymxs=</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2017年9月19日 周二 阴&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="日记" scheme="http://xujing15.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三天打鱼之第三天(2)</title>
-    <link href="http://xujing15.github.io/2017/09/18/20170918_2/"/>
-    <id>http://xujing15.github.io/2017/09/18/20170918_2/</id>
-    <published>2017-09-18T15:59:59.000Z</published>
-    <updated>2017-09-22T10:55:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>hexo+github搭建博客第一篇<br><a id="more"></a><br><strong>安装node</strong>：用来生成静态页面的<br><strong>安装git</strong>：把本地的hexo内容提交到github上去<br><strong>申请github</strong>：用来做博客的远程创库、域名、服务器之类的</p><p><code>hexo g</code> #完整命令为hexo generate，生成静态页面至public目录<br><code>hexo s</code> #完整命令为hexo server，用于启动服务器，主要用来本地预览（开启预览访问端口（默认端口4000））<br><code>hexo d</code> #完整命令为hexo deploy，用于将本地文件发布到github上（将.deploy目录部署到GitHub）<br><code>hexo n</code> #完整命令为hexo new，用于新建一篇文章<br><code>hexo new &quot;postName&quot;</code> #新建文章<br><code>hexo new page &quot;pageName&quot;</code> #新建页面<br><code>hexo help</code>  #查看帮助<br><code>hexo version</code>  #查看Hexo的版本</p><h4 id="安装HEXO：sudo-npm-install-g-hexo"><a href="#安装HEXO：sudo-npm-install-g-hexo" class="headerlink" title="安装HEXO：sudo npm install -g hexo"></a>安装HEXO：<code>sudo npm install -g hexo</code></h4><p><strong>初始化</strong>：创建一个文件夹，进入新建的文件夹中：<code>hexo init</code><br><strong>生成静态页面</strong>：还是在刚才新建的文件夹中：<code>hexo generate</code><br><strong>本地启动</strong>：<code>hexo server</code><br>还是本地的博客，可以访问<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p><h4 id="和github关联"><a href="#和github关联" class="headerlink" title="和github关联"></a>和github关联</h4><p><strong>建立Repository</strong>：建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】<br><strong>配置_config.yml文件</strong>：末尾改成（注意冒号后需要加空格）<br>    deploy:<br>      type: git<br>      repository: <a href="https://github.com/xujing15/xujing15.github.io.git" target="_blank" rel="external">https://github.com/xujing15/xujing15.github.io.git</a><br>      branch: master<br><strong>使用git部署</strong>：<code>npm install hexo-deployer-git –save</code><br><code>hexo deploy</code><br>可以访问<a href="http://xujing15.github.io/">http://xujing15.github.io/</a></p><h4 id="部署步骤"><a href="#部署步骤" class="headerlink" title="部署步骤"></a>部署步骤</h4><p><code>hexo clean</code><br><code>hexo generate</code><br><code>hexo deploy</code></p><p>hexo的配置文件_config.yml</p><h4 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h4><p><strong>下载</strong>：<code>git clone https://github.com/huangjunhui/concise.git themes/concise</code><br><strong>启用</strong>：修改博客根目录下的config.yml配置文件中的theme属性值，将其修改为concise<br><strong>更新</strong>：<code>cd themes/concise;git pull</code></p><h4 id="添加简介"><a href="#添加简介" class="headerlink" title="添加简介"></a>添加简介</h4><p>1、在\hexo\themes\light\layout_widget下新建名为intro.ejs的文件，编辑内容<br>2、在\hexo\themes\light_config.yml中，添加如下代码：<br><code>widgets:</code><br><code>intro</code></p><h4 id="hexo搭建博客过程中出现的问题"><a href="#hexo搭建博客过程中出现的问题" class="headerlink" title="hexo搭建博客过程中出现的问题"></a>hexo搭建博客过程中出现的问题</h4><p><strong>4000端口被占用</strong>：<br>可以在_config.yml内加上如下代码更改hexo-server运行时的端口号：<br><code>server:</code><br><code>port: 4001</code><br><code>compress: true</code><br><code>header: true</code><br>其中4001可以换成想要运行的端口号。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;hexo+github搭建博客第一篇&lt;br&gt;
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://xujing15.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://xujing15.github.io/tags/hexo/"/>
-    
-      <category term="github" scheme="http://xujing15.github.io/tags/github/"/>
-    
-      <category term="搭建博客" scheme="http://xujing15.github.io/tags/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>三天打鱼之第三天(1)</title>
-    <link href="http://xujing15.github.io/2017/09/18/20170918_1/"/>
-    <id>http://xujing15.github.io/2017/09/18/20170918_1/</id>
-    <published>2017-09-18T15:59:58.000Z</published>
-    <updated>2017-09-21T09:17:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<script src=/js/crypto-js.js></script><script>function doDecrypt(pwd, onError) {console.log("in doDecrypt");var txt = document.getElementById("enc_content").innerHTML;var plantext;try {  var bytes = CryptoJS.AES.decrypt(txt, pwd);plaintext = bytes.toString(CryptoJS.enc.Utf8);} catch(err) {if(onError) {onError(err);}return;}document.getElementById("enc_content").innerHTML = plaintext;document.getElementById("enc_content").style.display = "block";   document.getElementById("enc_passwd").style.display = "none";}</script><div id="enc_content" style="display:none">U2FsdGVkX1+Tm7DpotuqFdBAUf4Cp0z3RXli6JGHvHmX6gcd1bvY2HGQIZq2h4ARfH9Ptzv8EsHQZCDf4G5TA+NvFRv19rYtKU0ELn2BSTY48UxQX3hUdm5YhXwkm3Rd8mh1o3Wvlu1FfPfkVYocmbMc8Jov1gUVt4XY6TbNb4KRxo9wNLpUAD/6blVfCquzweYva4Yz91IsyWKTNyzq4mzgbXEuV/mTHpSY/Jnuyrk7zoL2dvzSxJN9iWc2DuXSFsbnHYfARwCVnSHQRECfDHO8hVxwFuHwsNem3LhOky94Rsfq4uExHWq9bKELryqm/K7iTFRzpFu0l5F/tuEA1BgEg2AOvkMWWgns7lm5PVh+vOI67WgKxvXW9U3KG4uF02CfGXSkeq2um9yYmJZOh696qHjdN6cRD5Uh6bMWDoTsYI3y036MX+nH5pVAdYXgWj8ATkdYHpZTQPxLM74STXwpiYcuEg6KC6OCf8pk1HJ992EEgeUkxzwcNZsgFFgOVHgfjw+DOea2X95UYmbWGeaGMSqyjF9xjumVyf9lSIRm6yBJbPwsLWHTzWyCicoR6ZdadRpVXzX071FTv00QhqrwRbMcoaYS+nNhP9ju+Sj96AGwLgvRfPmosr98bMWi/JBpHm5u7bo7Kay6psqpESc7bVITHdxop3MQn0HMARSO9iWdaGz4gNsGWgPrZxWw+SlmhPh3bm9um+hDPmJr/1Ds7DWllVyo6vw3JdEUkeNikP4cYfYGw6HaU4fEZNBCNI+rowedNSQ/rYBaEO7TYgU0ItdiIgnOn1DziXpQ195e78m6yXsxe+rKuC7HaZRaLV/uFMuILgImzAzs96uhBQ==</div><div id="enc_passwd"> <input id="enc_pwd_input" type="text" style="border-radius: 5px;border-style: groove;height: 30px;width: 50%;cursor: auto;font-size: 102%;color: currentColor;outline: none;text-overflow: initial;padding-left: 5px;" onkeydown="if (event.keyCode == 13) { decrypt(); return false;}"> <input type="submit" value="解&nbsp;密" onclick="decrypt()" style="width: 58px;height: 34px;border-radius: 5px;background-color: white;border-style: solid;color: currentColor;"><div id="enc_error" style="display: inline-block;color: #d84527;margin-left: 10px"></div><script>var onError = function(error) {document.getElementById("enc_error").innerHTML = "password error!"};function decrypt() {var passwd = document.getElementById("enc_pwd_input").value;console.log(passwd);doDecrypt(passwd, onError);}</script></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2017年9月18日 周一 晴&lt;br&gt;
     
     </summary>
     
